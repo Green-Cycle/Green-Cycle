@@ -1,14 +1,14 @@
 const router = require('express').Router();
 
 const {
+  
   deleteUser,
   getMyProfile,
   updateProfileName,
   getAllUsers,
 } = require('../controllers/users');
 
-// CREATE USER
-// router.post('/register', createUser);
+
 
 // DELETE USER BY ID
 router.delete('/:id', deleteUser);
