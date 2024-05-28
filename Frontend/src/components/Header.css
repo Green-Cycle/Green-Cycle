@@ -1,0 +1,39 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+}
+
+.search-icon{
+  width: 30px;
+  height: 30px;
+}
+
+.account-icon{
+  width: 30px;
+  height: 30px;
+}
+
+.header__search{
+  display: flex;
+  position: relative;
+}
+
+.header__form{
+  width: 100%;
+  transition: 250ms ease-out;
+  position: absolute;
+  bottom: 1;
+  left: 0;
+  margin-left: 40px;
+}
+
+.header__form_inactive{
+  width: 0;
+  overflow: hidden;
+  transition: 250ms ease-out;
+  position: absolute;
+  bottom: 1;
+  left: 0;
+}
