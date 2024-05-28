@@ -4,9 +4,9 @@ const auth = require('../middleware/auth');
 const { getProducts, addProduct } = require('../controllers/products');
 
 //GET INITIAL PRODUTCTS
-router.get('/products', getProducts);
+router.get('/', getProducts);
 
 //ADD PRODUCTS
-router.post('/products', addProduct);
+router.post('/', addProduct);
 
 module.exports = router;
