@@ -3,17 +3,24 @@
 **Qual é o desafio?**
 - Desenvolver soluções tecnológicas inovadoras para abordar desafios relacionados à sustentabilidade ambiental, utilizando habilidades em análise de dados, garantia de qualidade e desenvolvimento web.
 
+**O que é?**
+- 
+
+**Por que escolher o GeenCycle?**
+- 
+
 **Equipe:**
-- Desenvolvedor de Web:
+- Web Developer (WD):
   - Vinícius Corrêa da Silva Bueno
   - Pedro Drumond de Paula Pacheco
-- QA:
+- Quality Assurance (QA):
+  - Alysson Tomizawa    
   - Helen Fernanda Costa Pereira
   - Luna Marina Berriel
   - Miguel Ângelo Bicalho Miranda
   - Vitória Pacheco Rodrigues
-- Análise de Dados:
+- Data Analyst (DA):
   - Erik Neves
   - Monica Hideco Prupst
-- Ciência de Dados:
+- Data Science (DS):
   - Katia Goldchleger
