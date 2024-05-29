@@ -31,11 +31,22 @@ module.exports.addProduct = async (req, res) => {
     res.status(500).json({ msg: 'Erro no servidor' });
   }
 };
+
 //GET PRODUCTS BY CATEGORY
 module.exports.getProductByCategory = async (req, res) => {
   const {category} = req.body;
   try {
     const products = await Product.find({category: category });
+    res.status(200).json(products);
+  } catch {
+    res.status(500).json({ msg: 'Erro no servidor' });
+  }
+};
+
+//GET FEATURED PRODUCTS
+module.exports.getFeaturedProducts = async (req, res) => {
+  try {
+    const products = await Product.find({featured: true }).limit(6);
     res.status(200).json(products);
   } catch {
     res.status(500).json({ msg: 'Erro no servidor' });
