@@ -18,7 +18,7 @@ const productsSchema = new mongoose.Schema({
   cover: {
     type: String,
     required: true,
-    // validate: {
+    // validate: {Bol
     //   validator(v) {
     //     return /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*/gm.test(
     //       v
@@ -39,6 +39,9 @@ const productsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  featured: {
+    type: Boolean,
+  }
 });
 
 module.exports = mongoose.model('Products', productsSchema);
