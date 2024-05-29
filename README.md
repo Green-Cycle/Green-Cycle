@@ -11,10 +11,10 @@
 
 **Equipe:**
 - Web Developer (WD):
+  - Alysson Tomizawa
   - Vinícius Corrêa da Silva Bueno
   - Pedro Drumond de Paula Pacheco
-- Quality Assurance (QA):
-  - Alysson Tomizawa    
+- Quality Assurance (QA):    
   - Helen Fernanda Costa Pereira
   - Luna Marina Berriel
   - Miguel Ângelo Bicalho Miranda
