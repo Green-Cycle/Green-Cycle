@@ -23,7 +23,6 @@ Green Cycle se tornou um ponto de encontro para aqueles que queriam fazer escolh
   - Pedro Drumond de Paula Pacheco
 - Quality Assurance (QA):    
   - Helen Fernanda Costa Pereira
-  - Luna Marina Berriel
   - Miguel Ângelo Bicalho Miranda
   - Vitória Pacheco Rodrigues
 - Data Analyst (DA):
