@@ -21,12 +21,13 @@ Green Cycle se tornou um ponto de encontro para aqueles que queriam fazer escolh
   - Alysson Tomizawa
   - Vinícius Corrêa da Silva Bueno
   - Pedro Drumond de Paula Pacheco
-- Quality Assurance (QA):    
+- Quality Assurance (QA):
+  - Christiane Ventura Correia    
   - Helen Fernanda Costa Pereira
+  - Luna Marina Berriel
   - Miguel Ângelo Bicalho Miranda
   - Vitória Pacheco Rodrigues
 - Data Analyst (DA):
-  - Erik Neves
   - Monica Hideco Prupst
 - Data Science (DS):
   - Katia Goldchleger
