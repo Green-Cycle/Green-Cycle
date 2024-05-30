@@ -34,9 +34,9 @@ module.exports.addProduct = async (req, res) => {
 
 //GET PRODUCTS BY CATEGORY
 module.exports.getProductByCategory = async (req, res) => {
-  const {category} = req.body;
+  const { category } = req.body;
   try {
-    const products = await Product.find({category: category });
+    const products = await Product.find({ category: category });
     res.status(200).json(products);
   } catch {
     res.status(500).json({ msg: 'Erro no servidor' });
@@ -46,7 +46,20 @@ module.exports.getProductByCategory = async (req, res) => {
 //GET FEATURED PRODUCTS
 module.exports.getFeaturedProducts = async (req, res) => {
   try {
-    const products = await Product.find({featured: true }).limit(6);
+    const products = await Product.find({ featured: true }).limit(6);
+    res.status(200).json(products);
+  } catch {
+    res.status(500).json({ msg: 'Erro no servidor' });
+  }
+};
+
+// SEARCH PRODUCTS BY QUERY
+module.exports.searchProductsByQuery = async (req, res) => {
+  const { query } = req.body;
+  try {
+    const products = await Product.find({
+      name: { $regex: new RegExp(query, 'i') },
+    });
     res.status(200).json(products);
   } catch {
     res.status(500).json({ msg: 'Erro no servidor' });
