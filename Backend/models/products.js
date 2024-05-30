@@ -18,14 +18,6 @@ const productsSchema = new mongoose.Schema({
   cover: {
     type: String,
     required: true,
-    // validate: {Bol
-    //   validator(v) {
-    //     return /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*/gm.test(
-    //       v
-    //     );
-    //   },
-    //   message: (props) => `${props.value} não é válido!`,
-    // },
   },
   description: {
     type: String,
@@ -41,7 +33,7 @@ const productsSchema = new mongoose.Schema({
   },
   featured: {
     type: Boolean,
-  }
+  },
 });
 
 module.exports = mongoose.model('Products', productsSchema);

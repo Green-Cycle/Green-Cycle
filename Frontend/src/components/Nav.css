@@ -1,0 +1,49 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  padding: 0 2%;
+  margin: auto;
+  list-style: none;
+}
+
+.nav__link {
+  font-weight: 400;
+  transition: 300ms ease-out;
+  text-decoration: none;
+}
+
+.nav > li {
+  position: relative;
+}
+
+.nav__li {
+  position: relative;
+  margin-bottom: 1rem;
+  list-style: none;
+}
+
+.nav__li:hover {
+  color: grey;
+}
+
+.nav__li::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: grey;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 300ms ease-out;
+}
+
+.nav__li:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 880px) {
+  .nav {
+    display: none;
+  }
+}

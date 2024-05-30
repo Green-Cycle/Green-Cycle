@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
 
-
 :root {
   font-family: 'Reddit Mono', monospace;
   font-optical-sizing: auto;
@@ -8,10 +7,9 @@
   font-style: normal;
   line-height: 1.5;
 
-
   color-scheme: light dark;
-  color: #36454F;
-  background-color: white;
+  color: #36454f;
+  background-color: #d3d2cd;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,6 +17,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body{
+body {
   margin: 0;
 }

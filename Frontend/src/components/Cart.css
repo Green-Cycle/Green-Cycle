@@ -1,0 +1,23 @@
+.cart {
+  background: rgba(0, 0, 0, 0.5);
+  font-family: Inter;
+  position: fixed;
+  inset: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms ease-in, visibility 300ms ease-in;
+}
+
+.cart__opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cart__container {
+  text-align: center;
+  width: 430px;
+
+  padding: 26px;
+  background: white;
+  border-radius: 10px;
+}

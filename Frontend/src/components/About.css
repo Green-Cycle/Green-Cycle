@@ -1,0 +1,39 @@
+.about {
+  display: flex;
+  background-color: black;
+  color: white;
+  align-items: center;
+  padding: 48px;
+  column-gap: 20px;
+}
+
+.about__text {
+  align-self: first baseline;
+}
+.about__title {
+  text-align: left;
+  padding-bottom: 24px;
+}
+
+.about__paragraph {
+  text-align: justify;
+}
+
+@media screen and (max-width: 880px) {
+  .about {
+    flex-direction: column;
+  }
+  .about__text {
+    align-self: center;
+  }
+  .about__title {
+    text-align: center;
+    padding-top: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about__image {
+    width: 90%;
+  }
+}

@@ -1,36 +1,100 @@
-import React from 'react'
-import './Header.css'
-import { useState } from 'react'
+import { React, useState } from 'react';
+import './Header.css';
+import Cart from './Cart';
+import Nav from './Nav';
+
+import { useCart } from '../contexts/CartContext';
 
 function Header() {
-  const sendForm = (formData) => {
-    const searchParams = formData.get('searchParams')
-    console.log(searchParams)
-  }
+  const [openSearch, setOpenSearch] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const {
+    cartItems,
+    removeItemFromCart,
+    discountCode,
+    handleApplyDiscount,
+    setDiscountCode,
+
+    addItemToCart,
+  } = useCart();
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const toggleCart = () => {
+    setIsCartOpen((prevState) => !prevState);
+  };
+
   return (
-    <div>
+    <div className='header'>
       <div className='header__top'>
-        <button className='header__search'>
-          <form action={() => {sendForm(formData)}} className='header__form'>
-            <input name='searchParams' type="text" placeholder='What are you looking for?' />
+        <div className='header__search-container'>
+          <button className='header__search'>
+            <img
+              src='/assets/searchIcon.svg'
+              alt='search icon'
+              className='search-icon'
+              onClick={() => {
+                setOpenSearch(!openSearch);
+              }}
+            />
+          </button>
+          <form className='header__form'>
+            <input
+              name='searchParams'
+              type='text'
+              placeholder='What are you looking for?'
+            />
           </form>
-          <img src="/assets/searchIcon.svg" alt="search icon" className='search-icon' onClick={()=>{setSearchBar(prevState => !prevState)}}/>
-        </button>
-        <h1>LOGO</h1>
-        <button>
-          <img src="/assets/accountIcon.svg" alt="account icon" className='account-icon' />
-        </button>
+        </div>
+
+        <h1>
+          <img src='./assets/logo.svg' alt='logo' />
+        </h1>
+        <div className='header__icons'>
+          {' '}
+          <button onClick={toggleCart}>
+            <img
+              src='/assets/shopping_bag.svg'
+              alt='account icon'
+              className='account-icon'
+            />
+          </button>
+          <button>
+            <img
+              src='/assets/accountIcon.svg'
+              alt='account icon'
+              className='account-icon'
+            />
+          </button>
+          <button onClick={toggleMenu}>
+            <img
+              src='/assets/menu.svg'
+              alt='menu icon'
+              className='account-icon header__hamburguer'
+            />
+          </button>
+        </div>
       </div>
-      <nav>
-        <ul className='header__nav'>
-          <li className='header__li'><a className='header__link'>Loja</a></li>
-          <li className='header__li'><a className='header__link'>Sobre</a></li>
-          <li className='header__li'><a className='header__link'>Pontos de coleta</a></li>
-          <li className='header__li'><a className='header__link'>Contato</a></li>
-        </ul>
-      </nav>
+      <Nav />
+      <div className={menuOpen ? 'header__menu_open' : 'header__menu'}>
+        <Nav menuOpen={menuOpen} />
+      </div>
+      {isCartOpen && (
+        <Cart
+          cartItems={cartItems}
+          addItemToCart={addItemToCart}
+          removeItemFromCart={removeItemFromCart}
+          discountCode={discountCode}
+          setDiscountCode={setDiscountCode}
+          handleApplyDiscount={handleApplyDiscount}
+          toggleCart={toggleCart}
+        />
+      )}
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

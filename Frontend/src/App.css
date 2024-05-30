@@ -1,21 +1,22 @@
 #root {
   margin: 0;
   text-align: center;
+  background-color: #4a624c;
 }
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-button{
+button {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
-a{
+a {
   cursor: pointer;
 }
 
@@ -25,7 +26,5 @@ input {
   border-radius: 4px;
   padding-inline: 0.8rem;
   padding-block: 0.2rem;
-  color: black
+  color: black;
 }
-
-
