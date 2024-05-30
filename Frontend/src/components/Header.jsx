@@ -4,6 +4,7 @@ import Cart from './Cart';
 import Nav from './Nav';
 
 import { useCart } from '../contexts/CartContext';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const [openSearch, setOpenSearch] = useState(false);
@@ -51,7 +52,9 @@ function Header() {
         </div>
 
         <h1>
-          <img src='./assets/logo.svg' alt='logo' />
+          <Link to={'/'}>
+            <img src='./assets/logo.svg' alt='logo' />
+          </Link>
         </h1>
         <div className='header__icons'>
           {' '}
@@ -81,7 +84,7 @@ function Header() {
       <Nav />
       <div className={menuOpen ? 'header__menu_open' : 'header__menu'}>
         <Nav menuOpen={menuOpen} />
-      </div>
+      </div>{' '}
       {isCartOpen && (
         <Cart
           cartItems={cartItems}
@@ -93,6 +96,7 @@ function Header() {
           toggleCart={toggleCart}
         />
       )}
+      <div className='header__line' />
     </div>
   );
 }

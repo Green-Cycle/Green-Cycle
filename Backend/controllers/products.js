@@ -35,8 +35,10 @@ module.exports.addProduct = async (req, res) => {
 //GET PRODUCTS BY CATEGORY
 module.exports.getProductByCategory = async (req, res) => {
   const { category } = req.body;
+  console.log('Categoria recebida:', category);
   try {
     const products = await Product.find({ category: category });
+    console.log('Produtos encontrados:', products);
     res.status(200).json(products);
   } catch {
     res.status(500).json({ msg: 'Erro no servidor' });

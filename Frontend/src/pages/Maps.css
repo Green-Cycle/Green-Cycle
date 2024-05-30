@@ -15,15 +15,30 @@
   display: flex;
   padding-bottom: 5%;
   flex-direction: column;
-  align-items: first baseline;
+  align-items: center;
+}
+.maps__text-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin: 32px 0;
+  background-color: #ffffff3d;
+  border-radius: 10px;
+  padding: 30px;
 }
 .maps__text {
   display: flex;
-  row-gap: 20px;
+  column-gap: 10px;
 }
 
 .maps__title {
   margin-right: 15px;
+  font-size: 50px;
+}
+
+.maps__subtitle {
+  display: flex;
+  text-align: left;
 }
 
 @media screen and (max-width: 880px) {

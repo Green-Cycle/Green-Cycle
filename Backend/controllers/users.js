@@ -20,7 +20,6 @@ module.exports.createUser = async (req, res) => {
     cidade,
     cep,
     telefone,
-    role,
   } = req.body;
   try {
     // CHECK FOR EXISTING USER
@@ -44,7 +43,6 @@ module.exports.createUser = async (req, res) => {
       cidade,
       cep,
       telefone,
-      role,
       password: hash,
     });
 

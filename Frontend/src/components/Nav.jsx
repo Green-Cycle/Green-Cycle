@@ -18,7 +18,9 @@ function Nav({ menuOpen }) {
           <a className='nav__link'>Sobre</a>
         </li>
         <li className='nav__li'>
-          <a className='nav__link'>Pontos de coleta</a>
+          <Link className='nav__link' to={'/maps'}>
+            Pontos de coleta
+          </Link>
         </li>
         <li className='nav__li'>
           <a className='nav__link'>Contato</a>

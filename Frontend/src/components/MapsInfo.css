@@ -1,0 +1,45 @@
+.mapsInfo {
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(3, 0, 2, 0.8)),
+    url('../../public/assets/findMap.svg') no-repeat;
+
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  align-items: flex-start;
+  text-align: left;
+
+  column-gap: 20px;
+  height: 530px;
+}
+
+.mapsInfo__container {
+  width: 60%;
+  padding: 10%;
+}
+
+.mapsInfo__paragraph {
+  margin-bottom: 28px;
+}
+
+.mapsInfo__button {
+  width: 251px;
+  height: 38px;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid white;
+}
+
+@media screen and (max-width: 880px) {
+  .mapsInfo {
+    justify-content: center;
+  }
+  .mapsInfo__container {
+    width: 100%;
+    text-align: center;
+  }
+}

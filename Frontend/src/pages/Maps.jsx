@@ -58,12 +58,27 @@ function Maps() {
     <div className='maps__container'>
       <div className='maps__info'>
         <div className='maps__text'>
-          <h1 className='maps__title'>Pontos de coleta</h1>
           <img src='./assets/marker.svg' alt='ícone de marcação' />
+          <h1 className='maps__title'>Pontos de coleta</h1>
         </div>
-        <h3 className='maps__subtitle'>
+        <div className='maps__text-container'>
+          <p className='maps__subtitle'>
+            Descubra os pontos de coleta dos nossos parceiros e desfrute dos
+            benefícios exclusivos do nosso programa de incentivo à reciclagem.
+          </p>
+          <p className='maps__subtitle'>
+            Ao entregar seus materiais recicláveis em um de nossos pontos de
+            coleta, não só você contribui para o meio ambiente, mas também
+            garante descontos em todo o nosso site.
+          </p>
+          <p className='maps__subtitle'>
+            Junte-se a nós na jornada rumo a um planeta mais sustentável
+            enquanto economiza em suas compras online.
+          </p>
+        </div>
+        <p className='maps__subtitle'>
           Encontre um ponto de coleta perto de você:
-        </h3>
+        </p>
       </div>
       <div className='maps'>
         {isLoaded ? (

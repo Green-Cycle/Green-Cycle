@@ -1,0 +1,15 @@
+.auth {
+  padding-block: 3rem;
+  background-color: #d3d2cd;
+}
+
+.auth__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth__title {
+  font-weight: 400;
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}

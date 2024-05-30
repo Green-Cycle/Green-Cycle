@@ -1,6 +1,7 @@
 import Featured from './Featured';
 import About from './About';
-import Maps from './Maps';
+import MapsInfo from './MapsInfo';
+
 import './Main.css';
 
 function Main() {
@@ -15,7 +16,7 @@ function Main() {
       </div>
       <Featured />
       <About />
-      <Maps />
+      <MapsInfo />
     </>
   );
 }

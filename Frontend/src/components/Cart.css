@@ -1,6 +1,6 @@
 .cart {
   background: rgba(0, 0, 0, 0.5);
-  font-family: Inter;
+
   position: fixed;
   inset: 0;
   visibility: hidden;
@@ -14,10 +14,80 @@
 }
 
 .cart__container {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  width: 430px;
-
+  align-items: center;
+  width: 40%;
+  margin: 5% auto;
   padding: 26px;
   background: white;
   border-radius: 10px;
+}
+
+.cart__image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.cart__close-button {
+  background: none;
+  border: none;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.cart__discount {
+  display: flex;
+  align-items: center;
+}
+
+.cart__discount-button {
+  border-radius: 5%;
+  padding: 0 2%;
+  height: 37px;
+  background-color: #2980b9;
+}
+.cart__container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.cart__container li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart__container li:last-child {
+  border-bottom: none;
+}
+
+.cart__container input[type='text'] {
+  width: calc(70% - 22px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.cart__container button:nth-of-type(2):hover {
+  background-color: #2980b9;
+}
+.discount-message {
+  color: green;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 880px) {
+  /* .cart__container {
+    width: 90%;
+  } */
 }

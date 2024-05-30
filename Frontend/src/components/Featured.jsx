@@ -6,7 +6,7 @@ import { useCart } from '../contexts/CartContext';
 
 function Featured() {
   const [featured, setFeatured] = useState([]);
-
+  const { addItemToCart } = useCart();
   useEffect(() => {
     async function fetchData() {
       const products = await getFeaturedProducts();
@@ -30,8 +30,8 @@ function Featured() {
     <div className='featured'>
       <h2 className='featured__title'>DESTAQUES</h2>
       <div className='featured__card-list'>
-        {featured.map((item, index) => (
-          <div className='featured__card' key={index}>
+        {featured.map((item) => (
+          <div className='featured__card' key={item._id}>
             <img src={item.cover} alt={item.name} />
             <div className='featured__container'>
               <div>

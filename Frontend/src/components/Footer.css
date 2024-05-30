@@ -32,3 +32,19 @@
   width: 20px;
   height: 20px;
 }
+
+@media screen and (max-width: 880px) {
+  .footer {
+    display: grid;
+    grid-template-areas:
+      'contact'
+      'social';
+  }
+  .footer__columns {
+    grid-area: contact;
+    margin-bottom: 40px;
+  }
+  .footer__column-social {
+    grid-area: social;
+  }
+}
