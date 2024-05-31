@@ -15,9 +15,11 @@ module.exports.getProducts = async (req, res) => {
 //ADD PRODUCTS
 
 module.exports.addProduct = async (req, res) => {
-  const { name, cover, description, price, category, featured } = req.body;
+  const { company, name, cover, description, price, category, featured } =
+    req.body;
   try {
     const product = await Product.create({
+      company,
       name,
       cover,
       description,

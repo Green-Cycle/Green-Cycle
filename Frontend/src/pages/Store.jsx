@@ -6,7 +6,13 @@ function Store() {
   const { addItemToCart } = useCart();
   const [allProducts, setAllProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
-  const categories = ['Calçados', 'clothes', 'jewelry'];
+  const categories = [
+    'Acessórios',
+    'Calçados',
+    'Móveis',
+    'Roupas',
+    'Utilidades',
+  ];
   useEffect(() => {
     async function fetchData() {
       const products = await getAllProducts();
