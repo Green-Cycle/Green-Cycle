@@ -36,7 +36,7 @@ function Featured() {
             <div className='featured__container'>
               <div>
                 <p className='featured__text'>{item.name}</p>
-                <p>${item.price}</p>
+                <p>R${item.price}</p>
               </div>
 
               <button

@@ -16,6 +16,7 @@ function Store() {
   }, []);
   const fetchProductsByCategory = async (category) => {
     try {
+      console.log(category);
       const products = await getProductsByCategory(category);
       console.log('Produtos recebidos:', products);
       setAllProducts(products);
@@ -49,7 +50,7 @@ function Store() {
                 <div className='featured__container'>
                   <div>
                     <p className='featured__text'>{item.name}</p>
-                    <p>${item.price}</p>
+                    <p>R${item.price}</p>
                   </div>
 
                   <button

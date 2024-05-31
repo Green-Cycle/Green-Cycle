@@ -34,7 +34,7 @@ module.exports.addProduct = async (req, res) => {
 
 //GET PRODUCTS BY CATEGORY
 module.exports.getProductByCategory = async (req, res) => {
-  const { category } = req.body;
+  const { category } = req.params;
   console.log('Categoria recebida:', category);
   try {
     const products = await Product.find({ category: category });

@@ -16,7 +16,7 @@ router.get('/', getProducts);
 router.post('/new', addProduct);
 
 // GET PRODUCTS BY CATEGORY
-router.get('/category', getProductByCategory);
+router.get('/category/:category', getProductByCategory);
 
 // GET FEATURED PRODUCTS
 router.get('/featured', getFeaturedProducts);

@@ -45,7 +45,7 @@ function Cart({
           <p>{discountMessage}</p>
         </div>
         <div>
-          Total: $
+          Total:R$
           {cartItems.reduce((total, item) => total + parseFloat(item.price), 0)}
         </div>
         <Link className='cart__checkout' to={'/checkout'}>

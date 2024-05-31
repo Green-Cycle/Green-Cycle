@@ -22,14 +22,17 @@ const getFeaturedProducts = async () => {
   return products;
 };
 
-const getProductsByCategory = async () => {
-  const response = await fetch('http://localhost:3000/products/category', {
-    method: 'GET',
-    cache: 'no-cache',
-    headers: {
-      'Content-type': 'application/json',
-    },
-  });
+const getProductsByCategory = async (category) => {
+  const response = await fetch(
+    `http://localhost:3000/products/category/${category}`,
+    {
+      method: 'GET',
+      cache: 'no-cache',
+      headers: {
+        'Content-type': 'application/json',
+      },
+    }
+  );
   const products = await response.json();
   return products;
 };
@@ -57,4 +60,3 @@ const register = (regData) => {
     );
 };
 export { getAllProducts, getFeaturedProducts, getProductsByCategory, register };
-
