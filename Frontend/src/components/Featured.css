@@ -1,63 +1,62 @@
 .featured {
-  padding-block: 3rem;
+  padding: 2rem 1rem; /* Ajuste do padding para dispositivos móveis */
   background-color: #d3d2cd;
 }
 
 .featured__title {
   font-weight: 400;
-  font-size: 2rem;
-  margin-bottom: 4rem;
+  font-size: 1.5rem; /* Redução do tamanho do título para dispositivos móveis */
+  margin-bottom: 2rem; /* Redução da margem inferior */
 }
 
 .featured__card-list {
   display: flex;
   justify-content: space-around;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: auto;
+  gap: 1rem; /* Redução do espaçamento entre os cartões para dispositivos móveis */
+  max-width: 100%; /* Ocupar a largura total do contêiner pai */
   overflow: hidden;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem; /* Redução da margem inferior */
 }
 
 .featured__card {
   cursor: pointer;
-  width: 282px;
-  height: 400px;
+  width: 90%; /* Ajuste da largura para ocupar a largura total do contêiner pai */
+  height: 300px; /* Redução da altura dos cartões para dispositivos móveis */
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
-  flex-grow: 0;
-  flex-shrink: 0;
   background-color: white;
+  margin-bottom: 1rem; /* Adição de margem inferior entre os cartões */
 }
 
 .featured__card > img:hover {
-  scale: 1.05;
+  transform: scale(1.05); /* Correção da propriedade transform */
 }
 
 .featured__card > img {
   width: 100%;
-  height: 80%;
+  height: 70%; /* Redução da altura da imagem */
   object-fit: cover;
-  transition: 200ms ease-in-out;
+  transition: transform 200ms ease-in-out; /* Correção da propriedade transition */
 }
 
 .featured__card p {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Redução do tamanho da fonte para dispositivos móveis */
   text-align: left;
-  margin-inline: 1rem;
+  margin: 0.5rem 1rem; /* Ajuste da margem para dispositivos móveis */
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 }
+
 .featured__button {
-  margin-bottom: 10%;
+  margin-bottom: 5%; /* Redução da margem inferior para dispositivos móveis */
 }
 
 .featured__icon {
-  width: 30px;
-  height: 30px;
+  width: 25px; /* Redução do tamanho do ícone para dispositivos móveis */
+  height: 25px; /* Redução do tamanho do ícone para dispositivos móveis */
 }
 
 .featured__container {
@@ -66,8 +65,24 @@
 }
 
 .featured__text {
-  max-width: 200px;
+  max-width: 150px; /* Redução da largura máxima do texto para dispositivos móveis */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 880px) {
+  .featured {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .featured__card-list {
+    max-width: 1000px;
+  }
+
+  .featured__card {
+    width: 282px;
+    height: 400px;
+  }
 }

@@ -1,49 +1,56 @@
 .lojamain {
-  padding-block: 3rem;
+  padding: 3rem 1rem;
   background-color: #d3d2cd;
 }
 
 .lojamain__container {
   display: flex;
-  padding: 0 2rem;
+  flex-direction: column;
+  padding: 0 1rem;
 }
 
 .lojamain__title {
   font-weight: 400;
-  font-size: 2rem;
-  padding-bottom: 2rem;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .lojamain__card-list {
   display: flex;
-
   justify-content: space-around;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: auto;
-  overflow: hidden;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
 }
 
 .lojamain__categories {
   display: flex;
-  flex-direction: column;
 }
+
 .lojamain span {
   margin-bottom: 15px;
 }
 
-@media screen and (max-width: 880px) {
-  .lojamain__container {
-    flex-direction: column;
+@media screen and (min-width: 880px) {
+  .lojamain {
+    align-items: center;
   }
-  .lojamain__categories {
+  .lojamain__container {
     flex-direction: row;
     justify-content: space-around;
+  }
+  .lojamain__categories {
+    flex-direction: column;
+
     padding-bottom: 20px;
   }
   .lojamain span {
     margin-bottom: 0;
+  }
+
+  .lojamain__card-list {
+    max-width: 1000px;
+    justify-content: space-around;
   }
 }
