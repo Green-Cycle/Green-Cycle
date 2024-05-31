@@ -37,6 +37,21 @@ const getProductsByCategory = async (category) => {
   return products;
 };
 
+const getProductsByStore = async (company) => {
+  const response = await fetch(
+    `http://localhost:3000/products/company/${company}`,
+    {
+      method: 'GET',
+      cache: 'no-cache',
+      headers: {
+        'Content-type': 'application/json',
+      },
+    }
+  );
+  const products = await response.json();
+  return products;
+};
+
 const register = (regData) => {
   return fetch('http://localhost:3000/register', {
     method: 'POST',
@@ -59,4 +74,10 @@ const register = (regData) => {
         .send({ message: 'Um dos campos foi preenchido incorretamente' })
     );
 };
-export { getAllProducts, getFeaturedProducts, getProductsByCategory, register };
+export {
+  getAllProducts,
+  getFeaturedProducts,
+  getProductsByCategory,
+  getProductsByStore,
+  register,
+};

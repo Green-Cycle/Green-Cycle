@@ -1,11 +1,16 @@
 import './Store.css';
 import { useEffect, useState } from 'react';
-import { getAllProducts, getProductsByCategory } from '../utils/api';
+import {
+  getAllProducts,
+  getProductsByCategory,
+  getProductsByStore,
+} from '../utils/api';
 import { useCart } from '../contexts/CartContext';
 function Store() {
   const { addItemToCart } = useCart();
   const [allProducts, setAllProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCompany, setSelectedCompany] = useState('');
   const categories = [
     'Acessórios',
     'Calçados',
@@ -13,6 +18,7 @@ function Store() {
     'Roupas',
     'Utilidades',
   ];
+  const stores = ['Loja 1', 'Loja 2', 'Loja 3', 'Loja 4', 'Loja 5'];
   useEffect(() => {
     async function fetchData() {
       const products = await getAllProducts();
@@ -30,11 +36,24 @@ function Store() {
       console.error('Erro ao buscar produtos:', error);
     }
   };
+
+  const fetchProductsByCompany = async (company) => {
+    try {
+      const products = await getProductsByStore(company);
+
+      setAllProducts(products);
+    } catch (error) {
+      console.error('Erro ao buscar produtos:', error);
+    }
+  };
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
     fetchProductsByCategory(category);
   };
-
+  const handleCompanyClick = (company) => {
+    setSelectedCompany(company);
+    fetchProductsByCompany(company);
+  };
   return (
     <>
       <div className='lojamain'>
@@ -46,6 +65,12 @@ function Store() {
             {categories.map((category, index) => (
               <button key={index} onClick={() => handleCategoryClick(category)}>
                 {category}
+              </button>
+            ))}
+            <span>Lojas:</span>
+            {stores.map((company, index) => (
+              <button key={index} onClick={() => handleCompanyClick(company)}>
+                {company}
               </button>
             ))}
           </div>

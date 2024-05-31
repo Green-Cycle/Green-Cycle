@@ -47,6 +47,19 @@ module.exports.getProductByCategory = async (req, res) => {
   }
 };
 
+//GET PRODUCTS BY STORE
+module.exports.getProductByStore = async (req, res) => {
+  const { company } = req.params;
+
+  try {
+    const products = await Product.find({ company: company });
+
+    res.status(200).json(products);
+  } catch {
+    res.status(500).json({ msg: 'Erro no servidor' });
+  }
+};
+
 //GET FEATURED PRODUCTS
 module.exports.getFeaturedProducts = async (req, res) => {
   try {
