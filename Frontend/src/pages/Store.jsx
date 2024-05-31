@@ -62,17 +62,27 @@ function Store() {
           {' '}
           <div className='lojamain__categories'>
             <span>Categorias:</span>
-            {categories.map((category, index) => (
-              <button key={index} onClick={() => handleCategoryClick(category)}>
-                {category}
-              </button>
-            ))}
+            <div className='lojamain__order'>
+              {' '}
+              {categories.map((category, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleCategoryClick(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+
             <span>Lojas:</span>
-            {stores.map((company, index) => (
-              <button key={index} onClick={() => handleCompanyClick(company)}>
-                {company}
-              </button>
-            ))}
+            <div className='lojamain__order'>
+              {' '}
+              {stores.map((company, index) => (
+                <button key={index} onClick={() => handleCompanyClick(company)}>
+                  {company}
+                </button>
+              ))}
+            </div>
           </div>
           <div className='lojamain__card-list'>
             {allProducts.map((item) => (

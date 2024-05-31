@@ -74,10 +74,35 @@ const register = (regData) => {
         .send({ message: 'Um dos campos foi preenchido incorretamente' })
     );
 };
+
+const login = async (loginData) => {
+  try {
+    const response = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(loginData),
+    });
+
+    if (!response.ok) {
+      throw new Error('Invalid credentials');
+    }
+
+    const data = await response.json();
+
+    return data; // The token returned from the server
+  } catch (error) {
+    console.error('Login failed:', error.message);
+    return { message: 'Login failed' };
+  }
+};
 export {
   getAllProducts,
   getFeaturedProducts,
   getProductsByCategory,
   getProductsByStore,
   register,
+  login,
 };

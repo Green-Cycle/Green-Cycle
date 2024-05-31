@@ -17,6 +17,7 @@ function Register() {
     telefone: '',
     role: '',
     password: '',
+    confirmPassword: '',
   });
   const [message, setMessage] = useState('');
   const handleChange = (e) => {
@@ -44,8 +45,9 @@ function Register() {
 
         <div className='auth__personal-info'>
           <div>
-            <label>Nome:</label>
+            <label className='auth__label'>Nome:</label>
             <input
+              className='auth__input'
               type='text'
               name='name'
               value={regData.name}
@@ -53,8 +55,9 @@ function Register() {
             />
           </div>
           <div>
-            <label>CPF:</label>
+            <label className='auth__label'>CPF:</label>
             <input
+              className='auth__input'
               type='text'
               name='cpf'
               value={regData.cpf}
@@ -62,8 +65,9 @@ function Register() {
             />
           </div>
           <div>
-            <label>Email:</label>
+            <label className='auth__label'>Email:</label>
             <input
+              className='auth__input'
               type='email'
               name='email'
               value={regData.email}
@@ -71,8 +75,9 @@ function Register() {
             />
           </div>
           <div>
-            <label>Telefone:</label>
+            <label className='auth__label'>Telefone:</label>
             <input
+              className='auth__input'
               type='number'
               name='telefone'
               value={regData.telefone}
@@ -80,11 +85,22 @@ function Register() {
             />
           </div>
           <div>
-            <label>Senha:</label>
+            <label className='auth__label'>Senha:</label>
             <input
+              className='auth__input'
               type='password'
               name='password'
               value={regData.password}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label className='auth__label'>Confirme sua senha:</label>
+            <input
+              className='auth__input'
+              type='password'
+              name='confirmPassword'
+              value={regData.confirmPassword}
               onChange={handleChange}
             />
           </div>
@@ -93,8 +109,9 @@ function Register() {
           <div>
             {' '}
             <div>
-              <label>Rua:</label>
+              <label className='auth__label'>Rua:</label>
               <input
+                className='auth__input'
                 type='text'
                 name='rua'
                 value={regData.rua}
@@ -102,8 +119,9 @@ function Register() {
               />
             </div>
             <div>
-              <label>Número:</label>
+              <label className='auth__label'>Número:</label>
               <input
+                className='auth__input'
                 type='text'
                 name='numero'
                 value={regData.numero}
@@ -113,8 +131,9 @@ function Register() {
           </div>
           <div>
             <div>
-              <label>Complemento:</label>
+              <label className='auth__label'>Complemento:</label>
               <input
+                className='auth__input'
                 type='text'
                 name='complemento'
                 value={regData.complemento}
@@ -122,8 +141,9 @@ function Register() {
               />
             </div>
             <div>
-              <label>CEP:</label>
+              <label className='auth__label'>CEP:</label>
               <input
+                className='auth__input'
                 type='text'
                 name='cep'
                 value={regData.cep}
@@ -133,8 +153,9 @@ function Register() {
           </div>
           <div>
             <div>
-              <label>Bairro:</label>
+              <label className='auth__label'>Bairro:</label>
               <input
+                className='auth__input'
                 type='text'
                 name='bairro'
                 value={regData.bairro}
@@ -142,8 +163,9 @@ function Register() {
               />
             </div>
             <div>
-              <label>Cidade:</label>
+              <label className='auth__label'>Cidade:</label>
               <input
+                className='auth__input'
                 type='text'
                 name='cidade'
                 value={regData.cidade}
@@ -152,7 +174,9 @@ function Register() {
             </div>
           </div>
         </div>
-        <button type='submit'>Inscrever-se</button>
+        <button className='auth__button' type='submit'>
+          Inscrever-se
+        </button>
         {message && <p>{message}</p>}
         <span className='auth__subtitle'>
           Já é um membro?
