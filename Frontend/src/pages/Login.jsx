@@ -112,7 +112,11 @@ function Login() {
             </p>
           </div>
         </form>
-        {message && <p>{message}</p>}
+        {message && (
+          <div className='errorPopup'>
+            <p>{message}</p>
+          </div>
+        )}
       </div>
     </div>
   );
