@@ -51,7 +51,7 @@ Nosso backend foi desenvolvido para gerenciar produtos e usuários, proporcionan
 
 2. Navegue até o diretório do projeto:
     ```bash
-    cd seu-repositorio
+    cd Backend
     ```
 
 3. Instale as dependências:
