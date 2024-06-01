@@ -37,17 +37,12 @@ const login = async (loginData) => {
     }
 
     const data = await response.json();
-
-    return data; // The token returned from the server
+    console.log('Login efetuado', data);
+    return data;
   } catch (error) {
     console.error('Login failed:', error.message);
     return { message: 'Login failed' };
   }
 };
 
-export {
-    
-    register,
-    login,
-  };
-  
+export { register, login };

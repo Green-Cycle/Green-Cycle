@@ -26,34 +26,11 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  rua: {
-    type: String,
-    required: true,
-  },
-  numero: {
-    type: String,
-    required: true,
-  },
-  complemento: {
-    type: String,
-  },
-  bairro: {
-    type: String,
-    required: true,
-  },
-  cidade: {
-    type: String,
-    required: true,
-  },
-  cep: {
-    type: String,
-    required: true,
-  },
+
   telefone: {
     type: String,
     required: true,
   },
-  
 });
 
 module.exports = mongoose.model('User', userSchema);

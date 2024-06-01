@@ -5,7 +5,6 @@ require('dotenv').config();
 
 const User = require('../models/user');
 
-
 // CREATE USER
 module.exports.createUser = async (req, res) => {
   // GET INFO FROM BODY
@@ -15,12 +14,7 @@ module.exports.createUser = async (req, res) => {
     password,
     confirmPassword,
     cpf,
-    rua,
-    numero,
-    complemento,
-    bairro,
-    cidade,
-    cep,
+
     telefone,
   } = req.body;
   try {
@@ -42,12 +36,7 @@ module.exports.createUser = async (req, res) => {
       name,
       email,
       cpf,
-      rua,
-      numero,
-      complemento,
-      bairro,
-      cidade,
-      cep,
+
       telefone,
       password: hash,
     });
@@ -66,9 +55,7 @@ module.exports.createUser = async (req, res) => {
 // LOG IN
 module.exports.login = async (req, res, next) => {
   try {
-    
     const { email, password } = req.body;
-
 
     if (!(email && password)) {
       throw new BadRequest('All inputs are required');
@@ -77,12 +64,10 @@ module.exports.login = async (req, res, next) => {
     const user = await User.findOne({ email }).select('+password');
 
     if (user && (await bcrypt.compare(password, user.password))) {
-    
       const token = jwt.sign({ _id: user._id, email }, process.env.TOKEN_KEY, {
         expiresIn: '5h',
       });
 
-      
       return res.status(200).json(token);
     }
     throw new Error('Invalid credentials');
