@@ -82,15 +82,15 @@ function Store() {
   return (
     <>
       <div className='lojamain'>
-        <h2 className='lojamain__title'>Produtos de nossos parceiros</h2>
+        <h2 className='lojamain__title'>PRODUTOS DE NOSSOS PARCEIROS</h2>
         <div className='lojamain__container'>
-          {' '}
           <div className='lojamain__categories'>
-            <span>Categorias:</span>
+            <span>CATEGORIAS:</span>
             <div className='lojamain__order'>
               {' '}
               {categories.map((category, index) => (
                 <button
+                  className='lojamain__button'
                   key={index}
                   onClick={() => handleCategoryClick(category)}
                 >
@@ -99,11 +99,11 @@ function Store() {
               ))}
             </div>
 
-            <span>Lojas:</span>
+            <span className='lojamain__store-list'>LOJAS:</span>
             <div className='lojamain__order'>
               {' '}
               {stores.map((company, index) => (
-                <button key={index} onClick={() => handleCompanyClick(company)}>
+                <button className='lojamain__button' key={index} onClick={() => handleCompanyClick(company)}>
                   {company}
                 </button>
               ))}

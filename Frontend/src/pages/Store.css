@@ -4,8 +4,7 @@
 }
 
 .lojamain__container {
-  display: flex;
-  flex-direction: column;
+  margin: auto;
   padding: 0 1rem;
 }
 
@@ -18,7 +17,8 @@
 .lojamain__card-list {
   display: flex;
   justify-content: space-around;
-  gap: 1rem;
+  column-gap: 1rem;
+  row-gap: 2rem;
   flex-wrap: wrap;
   overflow: hidden;
   margin-bottom: 2rem;
@@ -45,11 +45,13 @@
     align-items: center;
   }
   .lojamain__title {
-    font-size: 38px;
     margin-bottom: 15px;
+    font-size: 2rem;
   }
   .lojamain__container {
-    flex-direction: row;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
     justify-content: space-around;
   }
   .lojamain__categories {
@@ -62,10 +64,29 @@
   }
   .lojamain span {
     margin-bottom: 0;
+    font-size: 1.1rem;
+    text-align: left;
+    font-weight: bold;
   }
 
   .lojamain__card-list {
     max-width: 1000px;
     justify-content: space-around;
+  }
+
+  .lojamain__button{
+    text-align: left;
+    margin-top: 0.5rem;
+    color:#36454f;
+  }
+
+  .lojamain__button:focus{
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .lojamain__store-list{
+    margin-top: 2rem;
   }
 }
