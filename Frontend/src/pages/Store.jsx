@@ -5,6 +5,7 @@ import {
   getProductsByCategory,
   getProductsByStore,
 } from '../utils/api';
+
 import { useCart } from '../contexts/CartContext';
 function Store() {
   const { addItemToCart } = useCart();
@@ -19,6 +20,7 @@ function Store() {
     'Utilidades',
   ];
   const stores = ['Loja 1', 'Loja 2', 'Loja 3', 'Loja 4', 'Loja 5'];
+
   useEffect(() => {
     async function fetchData() {
       const products = await getAllProducts();
@@ -26,6 +28,7 @@ function Store() {
     }
     fetchData();
   }, []);
+
   const fetchProductsByCategory = async (category) => {
     try {
       console.log(category);

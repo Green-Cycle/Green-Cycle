@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import './Header.css';
 import Cart from './Cart';
 import Nav from './Nav';
+import { searchProducts } from '../utils/api';
 
 import { useCart } from '../contexts/CartContext';
 import { Link } from 'react-router-dom';
@@ -10,6 +11,9 @@ function Header() {
   const [openSearch, setOpenSearch] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [searchFile, setSearchFile] = useState('');
+  const [searchItems, setSearchItems] = useState([]);
+
   const {
     cartItems,
     removeItemFromCart,
@@ -28,25 +32,35 @@ function Header() {
     setIsCartOpen((prevState) => !prevState);
   };
 
+  const handleSearch = async (evt) => {
+    console.log(handleSearch);
+    evt.preventDefault();
+    try {
+      const res = await searchProducts(searchFile);
+      setSearchItems(res);
+    } catch (error) {
+      console.error('Erro ao buscar produtos:', error);
+    }
+  };
+
   return (
     <div className='header'>
       <div className='header__top'>
         <div className='header__search-container'>
-          <button className='header__search'>
-            <img
-              src='/assets/searchIcon.svg'
-              alt='search icon'
-              className='search-icon'
-              onClick={() => {
-                setOpenSearch(!openSearch);
-              }}
-            />
-          </button>
-          <form className='header__form'>
+          <form className='header__form' onSubmit={handleSearch}>
+            <button type='submit' className='header__search'>
+              <img
+                src='/assets/searchIcon.svg'
+                alt='search icon'
+                className='search-icon'
+              />
+            </button>
             <input
               name='searchParams'
               type='text'
-              placeholder='What are you looking for?'
+              value={searchFile}
+              onChange={(e) => setSearchFile(e.target.value)}
+              placeholder='O que deseja buscar?'
             />
           </form>
         </div>

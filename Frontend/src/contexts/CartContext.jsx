@@ -14,9 +14,19 @@ export function CartProvider({ children }) {
     setIsCartOpen((prevState) => !prevState);
   };
 
-  const addItemToCart = (item) => {
-    setCartItems([...cartItems, { ...item }]);
-    console.log('Item adicionado ao carrinho:', item);
+  const addItemToCart = (newItem) => {
+    setCartItems((prevItems) => {
+      const existingItemIndex = prevItems.findIndex(
+        (item) => item.id === newItem.id
+      );
+      if (existingItemIndex !== -1) {
+        const updatedItems = [...prevItems];
+        updatedItems[existingItemIndex].quantity += 1;
+        return updatedItems;
+      } else {
+        return [...prevItems, { ...newItem, quantity: 1 }];
+      }
+    });
   };
 
   const handleApplyDiscount = () => {
@@ -39,9 +49,15 @@ export function CartProvider({ children }) {
     }
   };
   const removeItemFromCart = (index) => {
-    const updatedCartItems = [...cartItems];
-    updatedCartItems.splice(index, 1);
-    setCartItems(updatedCartItems);
+    setCartItems((prevItems) => {
+      const updatedItems = [...prevItems];
+      if (updatedItems[index].quantity > 1) {
+        updatedItems[index].quantity -= 1;
+      } else {
+        updatedItems.splice(index, 1);
+      }
+      return updatedItems;
+    });
   };
   return (
     <CartContext.Provider

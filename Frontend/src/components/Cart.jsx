@@ -22,6 +22,7 @@ function Cart({
           {cartItems.map((item, index) => (
             <li key={index}>
               <img src={item.cover} alt={item.name} className='cart__image' /> -{' '}
+              <span> {item.quantity}un</span>
               {item.name} - ${item.price}
               <button onClick={() => removeItemFromCart(index)}>
                 <img src='./assets/trashIcon.svg' alt='trash icon' />
@@ -46,7 +47,9 @@ function Cart({
         </div>
         <div>
           Total:R$
-          {cartItems.reduce((total, item) => total + parseFloat(item.price), 0)}
+          {cartItems
+            .reduce((total, item) => total + item.price * item.quantity, 0)
+            .toFixed(2)}
         </div>
         <Link className='cart__checkout' to={'/checkout'}>
           Finalizar Compra

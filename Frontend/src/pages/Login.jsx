@@ -2,7 +2,7 @@ import './Register.css';
 import './Login.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../utils/api';
+import { login } from '../utils/auth';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -52,8 +52,9 @@ function Login() {
     if (result.token) {
       // Save token to localStorage or context/state management
       localStorage.setItem('token', result.token);
-      navigate('/store');
+
       setMessage('Login successful!');
+      navigate('/maps');
     } else {
       setMessage(result.message);
     }

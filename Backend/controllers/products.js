@@ -82,3 +82,15 @@ module.exports.searchProductsByQuery = async (req, res) => {
     res.status(500).json({ msg: 'Erro no servidor' });
   }
 };
+
+// SEARCH PRODUCTS BY id
+module.exports.getProductsById = async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  try {
+    const products = await Product.find({ _id: id });
+    res.status(200).json(products);
+  } catch {
+    res.status(500).json({ msg: 'Erro no servidor' });
+  }
+};
