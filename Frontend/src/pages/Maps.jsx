@@ -59,7 +59,7 @@ function Maps() {
       <div className='maps__info'>
         <div className='maps__text'>
           <img src='./assets/marker.svg' alt='ícone de marcação' />
-          <h1 className='maps__title'>Pontos de coleta</h1>
+          <h1 className='maps__title'>PONTOS DE COLETA</h1>
         </div>
         <div className='maps__text-container'>
           <p className='maps__subtitle'>
@@ -92,7 +92,7 @@ function Maps() {
                 key={index}
                 position={{ lat: marker.lat, lng: marker.lng }}
                 icon={{
-                  url: `http://maps.google.com/mapfiles/ms/icons/green-dot.png`,
+                  url: './assets/logo_small.svg',
                 }}
                 onClick={() => onMarkerClick(marker)}
               />

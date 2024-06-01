@@ -16,7 +16,7 @@ function Featured() {
   }, []);
 
   const CardList = ({ item }) => {
-    <div className='featured__card'>
+    <div className='featured__card' key={item.key}>
       <img
         src='https://www.wearlalli.com/wp-content/uploads/2015/08/DSC_0051-copy-470x626@2x.jpg'
         alt='skirt'
@@ -55,7 +55,7 @@ function Featured() {
         ))}
 
         {featured.map((item) => {
-          return <CardList key={item.key} item={item} />;
+          return <CardList key={item._id} item={item} />;
         })}
       </div>
     </div>

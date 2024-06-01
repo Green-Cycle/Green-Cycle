@@ -29,6 +29,7 @@
 }
 
 .header__form {
+  display: flex;
   transition: 250ms ease-out;
   position: absolute;
   margin-left: 60px;

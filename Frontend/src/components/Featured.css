@@ -1,3 +1,15 @@
+@keyframes cardsIn {
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  
+}
+
 .featured {
   padding: 1rem;
   background-color: #d3d2cd;
@@ -30,6 +42,7 @@
   background-color: white;
   display: flex;
   flex-direction: column;
+  animation: cardsIn 1s;
 }
 
 .featured__card > img:hover {

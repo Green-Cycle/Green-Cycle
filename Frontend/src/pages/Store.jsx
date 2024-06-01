@@ -1,9 +1,11 @@
 import './Store.css';
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
   getAllProducts,
   getProductsByCategory,
   getProductsByStore,
+  searchProducts,
 } from '../utils/api';
 
 import { useCart } from '../contexts/CartContext';
@@ -20,14 +22,34 @@ function Store() {
     'Utilidades',
   ];
   const stores = ['Loja 1', 'Loja 2', 'Loja 3', 'Loja 4', 'Loja 5'];
+  
+  // INITIALIZE USESEARCH PARAMS
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('q')
 
   useEffect(() => {
+    // Define fetchData as an async function
     async function fetchData() {
-      const products = await getAllProducts();
-      setAllProducts(products);
+      try {
+        if (query === null) {
+          // Fetch all products
+          const products = await getAllProducts();
+          setAllProducts(products);
+        } else {
+          // Fetch search results
+          console.log('search');
+          const searchResults = await searchProducts(query);
+          setAllProducts(searchResults);
+        }
+      } catch (error) {
+        // Handle any errors (e.g., show an error message)
+        console.error('Error fetching data:', error);
+      }
     }
+  
+    // Call fetchData immediately
     fetchData();
-  }, []);
+  }, [query]); // Include query as a dependency
 
   const fetchProductsByCategory = async (category) => {
     try {
@@ -60,15 +82,15 @@ function Store() {
   return (
     <>
       <div className='lojamain'>
-        <h2 className='lojamain__title'>Produtos de nossos parceiros</h2>
+        <h2 className='lojamain__title'>PRODUTOS DE NOSSOS PARCEIROS</h2>
         <div className='lojamain__container'>
-          {' '}
           <div className='lojamain__categories'>
-            <span>Categorias:</span>
+            <span>CATEGORIAS:</span>
             <div className='lojamain__order'>
               {' '}
               {categories.map((category, index) => (
                 <button
+                  className='lojamain__button'
                   key={index}
                   onClick={() => handleCategoryClick(category)}
                 >
@@ -77,11 +99,11 @@ function Store() {
               ))}
             </div>
 
-            <span>Lojas:</span>
+            <span className='lojamain__store-list'>LOJAS:</span>
             <div className='lojamain__order'>
               {' '}
               {stores.map((company, index) => (
-                <button key={index} onClick={() => handleCompanyClick(company)}>
+                <button className='lojamain__button' key={index} onClick={() => handleCompanyClick(company)}>
                   {company}
                 </button>
               ))}
