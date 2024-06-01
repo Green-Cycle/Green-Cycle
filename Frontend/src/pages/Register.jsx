@@ -36,8 +36,7 @@ function Register() {
       newErrors.cpf = 'CPF é obrigatório.';
     }
 
-    const telefoneRegex = /\(\d{2}\)\d{5}-\d{4}/;
-    if (!telefoneRegex.test(regData.telefone)) {
+    if (!regData.telefone) {
       newErrors.telefone =
         'Favor digitar um telefone válido no formato (00)00000-0000.';
     }

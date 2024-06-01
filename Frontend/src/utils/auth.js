@@ -1,5 +1,7 @@
+const BASE_URL = 'https://green-cycle-ys6i.onrender.com';
+
 const register = (regData) => {
-  return fetch('http://localhost:3000/register', {
+  return fetch(`${BASE_URL}/register`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -23,7 +25,7 @@ const register = (regData) => {
 
 const login = async (loginData) => {
   try {
-    const response = await fetch('http://localhost:3000/login', {
+    const response = await fetch(`${BASE_URL}/login`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
