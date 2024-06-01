@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react';
+
 const CartContext = createContext();
 
 export function useCart() {
@@ -10,6 +11,7 @@ export function CartProvider({ children }) {
   const [discountCode, setDiscountCode] = useState('');
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [discountMessage, setDiscountMessage] = useState('');
+
   const toggleCart = () => {
     setIsCartOpen((prevState) => !prevState);
   };
@@ -17,7 +19,7 @@ export function CartProvider({ children }) {
   const addItemToCart = (newItem) => {
     setCartItems((prevItems) => {
       const existingItemIndex = prevItems.findIndex(
-        (item) => item.id === newItem.id
+        (item) => item._id === newItem._id
       );
       if (existingItemIndex !== -1) {
         const updatedItems = [...prevItems];
@@ -26,6 +28,23 @@ export function CartProvider({ children }) {
       } else {
         return [...prevItems, { ...newItem, quantity: 1 }];
       }
+    });
+  };
+
+  const removeItemFromCart = (itemId) => {
+    setCartItems((prevItems) => {
+      const updatedItems = prevItems
+        .map((item) => {
+          if (item._id === itemId) {
+            return {
+              ...item,
+              quantity: item.quantity - 1,
+            };
+          }
+          return item;
+        })
+        .filter((item) => item.quantity > 0);
+      return updatedItems;
     });
   };
 
@@ -48,27 +67,18 @@ export function CartProvider({ children }) {
       setDiscountMessage('Código de desconto inválido ou expirado');
     }
   };
-  const removeItemFromCart = (index) => {
-    setCartItems((prevItems) => {
-      const updatedItems = [...prevItems];
-      if (updatedItems[index].quantity > 1) {
-        updatedItems[index].quantity -= 1;
-      } else {
-        updatedItems.splice(index, 1);
-      }
-      return updatedItems;
-    });
-  };
+
   return (
     <CartContext.Provider
       value={{
         cartItems,
+        addItemToCart,
         removeItemFromCart,
         discountCode,
-        handleApplyDiscount,
         setDiscountCode,
+        handleApplyDiscount,
+        isCartOpen,
         toggleCart,
-        addItemToCart,
         discountMessage,
       }}
     >

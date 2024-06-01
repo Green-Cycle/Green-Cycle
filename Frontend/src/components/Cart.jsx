@@ -19,12 +19,12 @@ function Cart({
         </button>{' '}
         <h2>Carrinho</h2>
         <ul>
-          {cartItems.map((item, index) => (
-            <li key={index}>
+          {cartItems.map((item) => (
+            <li key={item._id}>
               <img src={item.cover} alt={item.name} className='cart__image' /> -{' '}
               <span> {item.quantity}un</span>
               {item.name} - ${item.price}
-              <button onClick={() => removeItemFromCart(index)}>
+              <button onClick={() => removeItemFromCart(item._id)}>
                 <img src='./assets/trashIcon.svg' alt='trash icon' />
               </button>
             </li>
