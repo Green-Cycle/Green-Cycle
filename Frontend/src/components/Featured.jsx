@@ -1,34 +1,30 @@
 import './Featured.css';
 import Cart from './Cart';
+import Loading from './Loading'
 import { getFeaturedProducts } from '../utils/api';
 import { useEffect, useState } from 'react';
 import { useCart } from '../contexts/CartContext';
 
 function Featured() {
   const [featured, setFeatured] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
   const { addItemToCart } = useCart();
+
+  // FETCH FEATURED PRODUCTS DATA
   useEffect(() => {
     async function fetchData() {
+      setIsLoading(true) // SET LOADING TEXT TO TRUE
       const products = await getFeaturedProducts();
+      setIsLoading(false) // SET LOADING TEXT TO FALSE
       setFeatured(products);
     }
     fetchData();
   }, []);
 
-  const CardList = ({ item }) => {
-    <div className='featured__card' key={item.key}>
-      <img
-        src='https://www.wearlalli.com/wp-content/uploads/2015/08/DSC_0051-copy-470x626@2x.jpg'
-        alt='skirt'
-      />
-      <p>Skirt</p>
-      <p>$500</p>
-    </div>;
-  };
-
   return (
     <div className='featured'>
       <h2 className='featured__title'>DESTAQUES</h2>
+      {isLoading && <Loading />}
       <div className='featured__card-list'>
         {featured.map((item) => (
           <div className='featured__card' key={item._id}>
@@ -53,10 +49,6 @@ function Featured() {
             </div>
           </div>
         ))}
-
-        {featured.map((item) => {
-          return <CardList key={item._id} item={item} />;
-        })}
       </div>
     </div>
   );
