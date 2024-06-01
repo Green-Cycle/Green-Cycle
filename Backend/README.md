@@ -19,7 +19,7 @@ Nosso backend foi desenvolvido para gerenciar produtos e usuários, proporcionan
 
 ## Introdução
 
-Uma breve introdução ao seu projeto, explicando o que ele faz e por que é útil.
+
 
 ## Funcionalidades
 
