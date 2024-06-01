@@ -37,14 +37,8 @@ function Header() {
   const handleSearch = async (evt) => {
     evt.preventDefault();
     setSearchParams('q', searchFile)
-    // const query = searchParams.get('q')
     navigate(`/store?q=${searchFile}`)
-    // try {
-    //   const res = await searchProducts(searchFile);
-    //   setSearchItems(res);
-    // } catch (error) {
-    //   console.error('Erro ao buscar produtos:', error);
-    // }
+    setSearchFile('')
   };
 
   return (
