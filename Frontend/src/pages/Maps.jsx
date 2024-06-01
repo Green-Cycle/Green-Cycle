@@ -58,7 +58,7 @@ function Maps() {
     <div className='maps__container'>
       <div className='maps__info'>
         <div className='maps__text'>
-          <img src='./assets/marker.svg' alt='ícone de marcação' />
+          <img src='/assets/marker.svg' alt='ícone de marcação' />
           <h1 className='maps__title'>PONTOS DE COLETA</h1>
         </div>
         <div className='maps__text-container'>
