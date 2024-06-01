@@ -67,13 +67,15 @@ Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis de 
 PORT=3000
 MONGODB_URI=sua-url-do-mongodb
 TOKEN_KEY=sua-chave-secreta
-
+   ```
 ## Execução
 
 Para rodar o servidor em ambiente de desenvolvimento:
-```npm run dev
 
-##API Endpoints
+```
+npm run dev
+   ```
+## API Endpoints
 
 AUTENTICAÇÃO:
 - POST: /login - Para login de usuários;
