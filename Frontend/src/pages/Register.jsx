@@ -77,7 +77,7 @@ function Register() {
         <h3 className='register__title'>CRIAR CONTA</h3>
 
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className='register__input-wrapper'>
             <input
               className='register__input'
               type='text'
@@ -90,7 +90,7 @@ function Register() {
               <p className='register__input-error'>{errors.name}</p>
             )}
           </div>
-          <div>
+          <div className='register__input-wrapper'>
             <input
               className='register__input'
               type='number'
@@ -103,7 +103,7 @@ function Register() {
               <p className='register__input-error'>{errors.cpf}</p>
             )}
           </div>
-          <div>
+          <div className='register__input-wrapper'>
             <input
               className='register__input'
               type='email'
@@ -116,7 +116,7 @@ function Register() {
               <p className='register__input-error'>{errors.email}</p>
             )}
           </div>
-          <div>
+          <div className='register__input-wrapper'>
             <input
               className='register__input'
               type='number'
@@ -129,7 +129,7 @@ function Register() {
               <p className='register__input-error'>{errors.telefone}</p>
             )}
           </div>
-          <div>
+          <div className='register__input-wrapper'>
             <input
               className='register__input'
               type='password'
@@ -142,7 +142,7 @@ function Register() {
               <p className='register__input-error'>{errors.password}</p>
             )}
           </div>
-          <div>
+          <div className='register__input-wrapper'>
             <input
               className='register__input'
               type='password'

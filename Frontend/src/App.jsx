@@ -9,6 +9,7 @@ import { CartProvider } from './contexts/CartContext';
 import Footer from './components/Footer';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Checkout from './pages/Checkout';
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/maps' element={<Maps />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/checkout' element={<Checkout />} />
         </Routes>
         <Footer />
       </CartProvider>
