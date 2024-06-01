@@ -22,13 +22,13 @@ const userSchema = new mongoose.Schema({
     minLength: 4,
   },
   cpf: {
-    type: String,
+    type: Number,
     required: true,
     unique: true,
   },
 
   telefone: {
-    type: String,
+    type: Number,
     required: true,
   },
 });
