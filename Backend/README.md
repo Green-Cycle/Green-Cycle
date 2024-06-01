@@ -23,9 +23,10 @@ Nosso backend foi desenvolvido para gerenciar produtos e usuários, proporcionan
 ## Screenshots
 
 Aqui estão algumas rotas que foram criadas:
-![Users](https://github.com/vinib96/web_project_around_express/assets/141737376/0da2a508-1c56-4463-954c-69a9d1b479d5)
-![User Alan](https://github.com/vinib96/web_project_around_express/assets/141737376/a06a0e8e-e5f9-431b-bbbe-207147e8cb5d)
-![cards](https://github.com/vinib96/web_project_around_express/assets/141737376/267cf719-17c3-42a3-b214-b2af29d20273)
+![Products](https://github.com/vinib96/web_project_around_express/assets/141737376/54ad1b71-e39d-4e40-83e1-6ded8516683c)
+
+![Users](https://github.com/vinib96/web_project_around_express/assets/141737376/4d5ef4c5-808e-42d9-b181-765ccfc65f41)
+
 
 ## Roadmap
 
