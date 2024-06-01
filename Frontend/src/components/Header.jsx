@@ -1,4 +1,5 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import './Header.css';
 import Cart from './Cart';
 import Nav from './Nav';
@@ -8,11 +9,12 @@ import { useCart } from '../contexts/CartContext';
 import { Link } from 'react-router-dom';
 
 function Header() {
-  const [openSearch, setOpenSearch] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [searchFile, setSearchFile] = useState('');
-  const [searchItems, setSearchItems] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams({q: ''});
+
+  const navigate = useNavigate();
 
   const {
     cartItems,
@@ -33,14 +35,16 @@ function Header() {
   };
 
   const handleSearch = async (evt) => {
-    console.log(handleSearch);
     evt.preventDefault();
-    try {
-      const res = await searchProducts(searchFile);
-      setSearchItems(res);
-    } catch (error) {
-      console.error('Erro ao buscar produtos:', error);
-    }
+    setSearchParams('q', searchFile)
+    // const query = searchParams.get('q')
+    navigate(`/store?q=${searchFile}`)
+    // try {
+    //   const res = await searchProducts(searchFile);
+    //   setSearchItems(res);
+    // } catch (error) {
+    //   console.error('Erro ao buscar produtos:', error);
+    // }
   };
 
   return (
@@ -48,6 +52,13 @@ function Header() {
       <div className='header__top'>
         <div className='header__search-container'>
           <form className='header__form' onSubmit={handleSearch}>
+              <input
+                name='searchParams'
+                type='text'
+                value={searchFile}
+                onChange={(e) => setSearchFile(e.target.value)}
+                placeholder='O que deseja buscar?'
+              />
             <button type='submit' className='header__search'>
               <img
                 src='/assets/searchIcon.svg'
@@ -55,13 +66,6 @@ function Header() {
                 className='search-icon'
               />
             </button>
-            <input
-              name='searchParams'
-              type='text'
-              value={searchFile}
-              onChange={(e) => setSearchFile(e.target.value)}
-              placeholder='O que deseja buscar?'
-            />
           </form>
         </div>
 

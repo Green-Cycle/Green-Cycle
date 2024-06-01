@@ -53,7 +53,7 @@ const getProductsByStore = async (company) => {
 };
 
 // SEARCH PRODUCTS
-const searchProducts = (query) => {
+const searchProducts = async (query) => {
   return fetch('http://localhost:3000/products/search', {
     method: 'POST',
     headers: {
