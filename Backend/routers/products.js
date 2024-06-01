@@ -8,6 +8,7 @@ const {
   getFeaturedProducts,
   searchProductsByQuery,
   getProductByStore,
+  getProductsById,
 } = require('../controllers/products');
 
 //GET INITIAL PRODUTCTS
@@ -15,6 +16,9 @@ router.get('/', getProducts);
 
 //ADD PRODUCTS
 router.post('/new', addProduct);
+
+// GET PRODUCTS BY ID
+router.get('/:id', getProductsById);
 
 // GET PRODUCTS BY CATEGORY
 router.get('/category/:category', getProductByCategory);

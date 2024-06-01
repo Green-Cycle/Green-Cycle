@@ -1,8 +1,7 @@
-import { useJsApiLoader } from '@react-google-maps/api';
 import './Register.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { register } from '../utils/api';
+import { register } from '../utils/auth';
 function Register() {
   const [regData, setRegData] = useState({
     name: '',
@@ -41,7 +40,7 @@ function Register() {
     <div className='auth'>
       {' '}
       <form className='auth__container' onSubmit={handleSubmit}>
-        <h3 className='auth__title'>Inscrever-se</h3>
+        <h3 className='auth__title'>CRIAR CONTA</h3>
 
         <div className='auth__personal-info'>
           <div>
@@ -58,7 +57,7 @@ function Register() {
             <label className='auth__label'>CPF:</label>
             <input
               className='auth__input'
-              type='text'
+              type='number'
               name='cpf'
               value={regData.cpf}
               onChange={handleChange}
@@ -122,7 +121,7 @@ function Register() {
               <label className='auth__label'>Número:</label>
               <input
                 className='auth__input'
-                type='text'
+                type='number'
                 name='numero'
                 value={regData.numero}
                 onChange={handleChange}
@@ -144,7 +143,7 @@ function Register() {
               <label className='auth__label'>CEP:</label>
               <input
                 className='auth__input'
-                type='text'
+                type='number'
                 name='cep'
                 value={regData.cep}
                 onChange={handleChange}
@@ -175,7 +174,7 @@ function Register() {
           </div>
         </div>
         <button className='auth__button' type='submit'>
-          Inscrever-se
+          Cadastrar
         </button>
         {message && <p>{message}</p>}
         <span className='auth__subtitle'>

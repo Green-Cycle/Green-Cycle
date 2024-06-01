@@ -1,7 +1,7 @@
 import './Register.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../utils/api';
+import { login } from '../utils/auth';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -12,14 +12,14 @@ function Login() {
   const handleLogin = async (event) => {
     event.preventDefault();
 
-    const loginData = { email, password };
-    const result = await login(loginData);
-
+    const result = await login({ email, password });
+    console.log('Result from login:', result);
     if (result.token) {
       // Save token to localStorage or context/state management
       localStorage.setItem('token', result.token);
-      navigate('/store');
+
       setMessage('Login successful!');
+      navigate('/maps');
     } else {
       setMessage(result.message);
     }
