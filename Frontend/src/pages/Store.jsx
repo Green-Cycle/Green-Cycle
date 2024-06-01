@@ -1,5 +1,5 @@
 import './Store.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import {
   getAllProducts,
@@ -9,11 +9,13 @@ import {
 } from '../utils/api';
 
 import { useCart } from '../contexts/CartContext';
+
 function Store() {
   const { addItemToCart } = useCart();
   const [allProducts, setAllProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedCompany, setSelectedCompany] = useState('');
+
   const categories = [
     'Acessórios',
     'Calçados',
@@ -37,7 +39,6 @@ function Store() {
           setAllProducts(products);
         } else {
           // Fetch search results
-          console.log('search');
           const searchResults = await searchProducts(query);
           setAllProducts(searchResults);
         }
@@ -64,8 +65,7 @@ function Store() {
 
   const fetchProductsByCompany = async (company) => {
     try {
-      const products = await getProductsByStore(company);
-
+      const products = await getProductsByStore(company);   
       setAllProducts(products);
     } catch (error) {
       console.error('Erro ao buscar produtos:', error);
@@ -110,7 +110,7 @@ function Store() {
             </div>
           </div>
           <div className='lojamain__card-list'>
-            {allProducts.map((item) => (
+            {allProducts.map((item) => (    
               <div className='featured__card' key={item._id}>
                 <img src={item.cover} alt={item.name} />
                 <div className='featured__container'>
@@ -122,13 +122,13 @@ function Store() {
                   <button
                     className='featured__button'
                     onClick={() => addItemToCart(item)}
-                  >
+                    >
                     {' '}
                     <img
                       src='../assets/shopping_bag.svg'
                       alt='shopping bag icon'
                       className='featured__icon'
-                    />
+                      />
                   </button>
                 </div>
               </div>
