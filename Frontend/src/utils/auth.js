@@ -1,5 +1,5 @@
+import { BASE_URL } from './const';
 
-const BASE_URL = 'https://green-cycle-ys6i.onrender.com';
 
 const register = (regData) => {
   return fetch(`${BASE_URL}/register`, {
@@ -46,6 +46,27 @@ const login = async (loginData) => {
     console.error('Login failed:', error.message);
     return { message: 'Login failed' };
   }
+};
+
+export const getUser = async (token) => {
+  if (!token || typeof token !== 'string') {
+    throw new Error('400 - The provided token is in the wrong format');
+  }
+
+  return fetch(`${BASE_URL}/users/me`, {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((res) => {
+      if (res.status === 401) {
+        throw new Error('401 - The provided token is invalid');
+      }
+      return res.json();
+    })
+    .then((data) => data);
 };
 
 export { register, login };

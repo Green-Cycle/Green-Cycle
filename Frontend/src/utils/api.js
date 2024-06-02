@@ -1,4 +1,4 @@
-const BASE_URL = 'https://green-cycle-ys6i.onrender.com';
+import { BASE_URL } from './const';
 
 const getAllProducts = async () => {
   const response = await fetch(`${BASE_URL}/products`, {
