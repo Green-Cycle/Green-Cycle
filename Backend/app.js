@@ -28,7 +28,7 @@ app.post('/register', createUser);
 app.post('/login', login);
 
 app.use('/products', productsRouter);
-app.use('/users', userRouter);
+app.use('/users', auth, userRouter);
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
