@@ -11,6 +11,11 @@
   padding-bottom: 3rem;
 }
 
+.header__logo {
+  position: absolute;
+  left: calc(50vw - 118px);
+}
+
 .search-icon {
   width: 30px;
   height: 30px;
