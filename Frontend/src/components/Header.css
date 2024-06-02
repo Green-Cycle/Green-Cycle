@@ -1,14 +1,19 @@
 .header {
-  background-color: #d3d2cd;
+  background-color: #dfddd2;
 }
 
 .header__top {
-  margin-top: 1rem;
+  margin-top: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 2rem;
-  padding-bottom: 5rem;
+  padding-inline: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+.header__logo {
+  position: absolute;
+  left: calc(50vw - 118px);
 }
 
 .search-icon {
@@ -17,9 +22,14 @@
 }
 
 .account-icon {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
 }
+
+button:first-child {
+  margin-right: 1.5rem;
+}
+
 .header__search-container {
   display: flex;
   align-items: center;

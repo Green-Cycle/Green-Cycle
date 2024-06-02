@@ -12,7 +12,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [searchFile, setSearchFile] = useState('');
-  const [searchParams, setSearchParams] = useSearchParams({q: ''});
+  const [searchParams, setSearchParams] = useSearchParams({ q: '' });
 
   const navigate = useNavigate();
 
@@ -36,9 +36,9 @@ function Header() {
 
   const handleSearch = async (evt) => {
     evt.preventDefault();
-    setSearchParams('q', searchFile)
-    navigate(`/store?q=${searchFile}`)
-    setSearchFile('')
+    setSearchParams('q', searchFile);
+    navigate(`/store?q=${searchFile}`);
+    setSearchFile('');
   };
 
   return (
@@ -46,13 +46,13 @@ function Header() {
       <div className='header__top'>
         <div className='header__search-container'>
           <form className='header__form' onSubmit={handleSearch}>
-              <input
-                name='searchParams'
-                type='text'
-                value={searchFile}
-                onChange={(e) => setSearchFile(e.target.value)}
-                placeholder='O que deseja buscar?'
-              />
+            <input
+              name='searchParams'
+              type='text'
+              value={searchFile}
+              onChange={(e) => setSearchFile(e.target.value)}
+              placeholder='O que deseja buscar?'
+            />
             <button type='submit' className='header__search'>
               <img
                 src='/assets/searchIcon.svg'
@@ -63,7 +63,7 @@ function Header() {
           </form>
         </div>
 
-        <h1>
+        <h1 className='header__logo'>
           <Link to={'/'}>
             <img src='./assets/logo.svg' alt='logo' />
           </Link>

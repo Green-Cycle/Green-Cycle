@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: 50%;
   padding: 0 2%;
   margin: auto;
   list-style: none;
@@ -11,7 +11,7 @@
   font-weight: 400;
   transition: 300ms ease-out;
   text-decoration: none;
-  color: #36454f;
+  color: #5a5a5a;
 }
 
 .nav > li {
