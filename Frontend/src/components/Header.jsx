@@ -6,6 +6,7 @@ import Nav from './Nav';
 import { searchProducts } from '../utils/api';
 
 import { useCart } from '../contexts/CartContext';
+import { useUser } from '../contexts/UserContext';
 import { Link } from 'react-router-dom';
 
 function Header() {
@@ -15,6 +16,8 @@ function Header() {
   const [searchParams, setSearchParams] = useSearchParams({ q: '' });
 
   const navigate = useNavigate();
+
+  const { user, setUser } = useUser();
 
   const {
     cartItems,
@@ -68,8 +71,8 @@ function Header() {
             <img src='./assets/logo.svg' alt='logo' />
           </Link>
         </h1>
-        <div className='header__icons'>
-          {' '}
+        {user ? <div className='header__icons'>
+
           <button onClick={toggleCart}>
             <img
               src='/assets/shoppingCart2.svg'
@@ -91,12 +94,12 @@ function Header() {
               className='account-icon header__hamburguer'
             />
           </button>
-        </div>
+        </div> : <p>no user</p>}
       </div>
       <Nav />
       <div className={menuOpen ? 'header__menu_open' : 'header__menu'}>
         <Nav menuOpen={menuOpen} />
-      </div>{' '}
+      </div>
       {isCartOpen && (
         <Cart
           cartItems={cartItems}

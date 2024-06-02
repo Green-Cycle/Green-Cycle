@@ -2,9 +2,12 @@ import './Register.css';
 import './Login.css';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { login } from '../utils/auth';
+import { login, getUser } from '../utils/auth';
+
+import { useUser } from '../contexts/UserContext';
 
 function Login() {
+  const { user, setUser } = useUser();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -24,6 +27,9 @@ function Login() {
 
   const handleLogin = async (event) => {
     event.preventDefault();
+    setUser({
+      name: "new name"
+    })
 
     // RESET ERRORS
     setMessage('');
@@ -54,13 +60,16 @@ function Login() {
     setEmailError({ error: false, message: '' });
 
     const loginData = { email, password };
-    console.log(loginData)
     const result = await login(loginData);
+    console.log(result)
 
 
-    if (result.token) {
+
+    if (result) {
       // Save token to localStorage or context/state management
-      localStorage.setItem('token', result.token);
+      localStorage.setItem('token', result);
+      const currentUser = await getUser(result)
+      console.log(currentUser)
       setMessage('Login successful!');
     } else {
       return setMessage(result.message);
