@@ -32,5 +32,4 @@ Green Cycle se tornou um ponto de encontro para aqueles que queriam fazer escolh
 - Data Science (DS):
   - Katia Goldchleger
 
-# Link da documentação:
-- https://www.canva.com/design/DAGGqTyLOYk/FK2OQ0sVUWyK0QJ6aZQkaQ/edit?utm_content=DAGGqTyLOYk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+# [Link da documentação:](https://www.canva.com/design/DAGGqTyLOYk/FK2OQ0sVUWyK0QJ6aZQkaQ/edit?utm_content=DAGGqTyLOYk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
