@@ -1,21 +1,22 @@
 import { useState } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 import Cart from './Cart';
 import Nav from './Nav';
-import { searchProducts } from '../utils/api';
 
+import { useAuth } from '../contexts/AuthContext';
+import Search from './Search';
 import { useCart } from '../contexts/CartContext';
 import { Link } from 'react-router-dom';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [searchFile, setSearchFile] = useState('');
-  const [searchParams, setSearchParams] = useSearchParams({ q: '' });
-
+  const location = useLocation();
+  const isLoginPage = location.pathname === '/login';
+  const isRegisterPage = location.pathname === '/register';
+  const { isLoggedIn, user, logout } = useAuth();
   const navigate = useNavigate();
-
   const {
     cartItems,
     removeItemFromCart,
@@ -34,56 +35,49 @@ function Header() {
     setIsCartOpen((prevState) => !prevState);
   };
 
-  const handleSearch = async (evt) => {
-    evt.preventDefault();
-    setSearchParams('q', searchFile);
-    navigate(`/store?q=${searchFile}`);
-    setSearchFile('');
-  };
-
   return (
     <div className='header'>
       <div className='header__top'>
-        <div className='header__search-container'>
-          <form className='header__form' onSubmit={handleSearch}>
-            <input
-              name='searchParams'
-              type='text'
-              value={searchFile}
-              onChange={(e) => setSearchFile(e.target.value)}
-              placeholder='O que deseja buscar?'
-            />
-            <button type='submit' className='header__search'>
-              <img
-                src='/assets/searchIcon.svg'
-                alt='search icon'
-                className='search-icon'
-              />
-            </button>
-          </form>
-        </div>
-
         <h1 className='header__logo'>
           <Link to={'/'}>
             <img src='./assets/logo.svg' alt='logo' />
           </Link>
         </h1>
+        <Search />
         <div className='header__icons'>
           {' '}
-          <button onClick={toggleCart}>
-            <img
-              src='/assets/shopping_bag.svg'
-              alt='account icon'
-              className='account-icon'
-            />
-          </button>
-          <button>
-            <img
-              src='/assets/accountIcon.svg'
-              alt='account icon'
-              className='account-icon'
-            />
-          </button>
+          {!isLoginPage && !isRegisterPage && isLoggedIn && (
+            <>
+              {' '}
+              <button onClick={toggleCart}>
+                <img
+                  src='/assets/shopping_bag.svg'
+                  alt='account icon'
+                  className='account-icon'
+                />
+              </button>
+              <button onClick={logout}>
+                <img
+                  src='/assets/accountIcon.svg'
+                  alt='account icon'
+                  className='account-icon'
+                />
+              </button>
+              {/* <span>Olá, {user?.name}</span>
+              <button onClick={logout}>LOGOUT</button> */}
+            </>
+          )}
+          {!isLoggedIn && !isLoginPage && !isRegisterPage && (
+            <div className='header__login-box'>
+              <Link className='header__login-button' to={'/login'}>
+                LOGIN
+              </Link>
+              <span>
+                {' '}
+                ou cadastre-se <Link to={'/register'}>aqui</Link>
+              </span>
+            </div>
+          )}
           <button onClick={toggleMenu}>
             <img
               src='/assets/menu.svg'
@@ -95,6 +89,7 @@ function Header() {
       </div>
       <Nav />
       <div className={menuOpen ? 'header__menu_open' : 'header__menu'}>
+        <Search menuOpen={menuOpen} />
         <Nav menuOpen={menuOpen} />
       </div>{' '}
       {isCartOpen && (

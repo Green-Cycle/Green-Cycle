@@ -2,12 +2,16 @@ import './Register.css';
 import './Login.css';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 import { login } from '../utils/auth';
+import { getUserData } from '../utils/api';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const { login: authLogin } = useAuth();
+
   const [passwordError, setPasswordError] = useState({
     error: false,
     message: '',
@@ -54,21 +58,29 @@ function Login() {
     setEmailError({ error: false, message: '' });
 
     const loginData = { email, password };
-    console.log(loginData)
+    console.log(loginData);
     const result = await login(loginData);
 
-
-    if (result.token) {
-      // Save token to localStorage or context/state management
-      localStorage.setItem('token', result.token);
-      setMessage('Login successful!');
+    if (result && typeof result === 'string') {
+      console.log('Resultado do login:', result);
+      localStorage.setItem('token', result);
+      const userData = await getUserData(result); // Obtem os dados do usuário
+      if (userData) {
+        authLogin(userData); // Passa os dados do usuário para o contexto
+        setMessage('Login successful!');
+        navigate('/store');
+      } else {
+        setMessage('Failed to fetch user data');
+      }
     } else {
-      return setMessage(result.message);
+      console.log('Falha no login. Resultado:', result);
+      setMessage(
+        'Falha ao fazer login. Verifique suas credenciais e tente novamente.'
+      );
     }
-    navigate('/store');
-  }
-    
-    return (
+  };
+
+  return (
     <div className='login'>
       <div className='login__wrapper'>
         <h2 className='login__title'>LOGIN</h2>
@@ -104,7 +116,10 @@ function Login() {
           <div className='login__button-wrapper'>
             <button type='submit'>Login</button>
             <p className='login__register'>
-              Ainda não possui um cadastro? <Link className='login__register-link' to='/register'>Cadastre-se.</Link>{' '}
+              Ainda não possui um cadastro?{' '}
+              <Link className='login__register-link' to='/register'>
+                Cadastre-se.
+              </Link>{' '}
             </p>
           </div>
         </form>

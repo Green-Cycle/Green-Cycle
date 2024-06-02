@@ -6,9 +6,8 @@
 }
 
 .maps {
-  width: 100%; /* A largura será ajustada automaticamente para preencher o contêiner pai */
-  height: auto; /* Altura ajustada automaticamente com base na largura para manter a proporção */
-  max-width: 966px; /* Definindo uma largura máxima para evitar que o mapa fique muito grande em telas maiores */
+  width: 300px;
+  height: 250px;
   align-self: center;
 }
 

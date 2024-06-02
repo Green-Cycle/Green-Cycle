@@ -1,4 +1,3 @@
-
 const BASE_URL = 'https://green-cycle-ys6i.onrender.com';
 
 const register = (regData) => {
@@ -48,4 +47,23 @@ const login = async (loginData) => {
   }
 };
 
-export { register, login };
+const checkToken = async (token) => {
+  try {
+    const response = await fetch(`${BASE_URL}/users/me`, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Login failed:', error.message);
+    return null;
+  }
+};
+
+export { register, login, checkToken };

@@ -1,0 +1,24 @@
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search__form {
+  display: flex;
+  transition: 250ms ease-out;
+  position: absolute;
+  margin-left: 60px;
+  bottom: 1;
+  left: 0;
+}
+
+.search-icon {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 880px) {
+  .search-container {
+    display: none;
+  }
+}

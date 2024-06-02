@@ -16,39 +16,36 @@
   left: calc(50vw - 118px);
 }
 
-.search-icon {
-  width: 30px;
-  height: 30px;
-}
-
 .account-icon {
   width: 26px;
   height: 26px;
 }
 
-button:first-child {
-  margin-right: 1.5rem;
-}
-
-.header__search-container {
-  display: flex;
-  align-items: center;
-}
 .header__search {
   display: flex;
 }
 
-.header__form {
+.header__icons {
   display: flex;
-  transition: 250ms ease-out;
-  position: absolute;
-  margin-left: 60px;
-  bottom: 1;
-  left: 0;
+  align-items: center;
+}
+.header__login-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-right: 1.5rem;
 }
 
-.header__form_inactive {
-  display: flex;
+.header__login-button {
+  color: black;
+  width: 126px;
+  height: 38px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 0.5rem;
+  line-height: 1rem;
+  text-decoration: none;
 }
 .header__hamburguer {
   display: none;
