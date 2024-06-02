@@ -8,10 +8,14 @@ function Main() {
   return (
     <>
       <div className='main'>
-        <h1 className='main__title'>Apresentação</h1>
+        <h1 className='main__title'>FAÇA PARTE DA MUDANÇA</h1>
         <p className='main__subtitle'>
-          Pequeno text apresentando um pouco da proposta do site, uma pequena
-          apresentação sobre o nosso trabalho com mais ou menos 2 ou 3 linhas
+          Green Cycle conecta empresas de produtos sustentáveis com consumidores
+          conscientes, promovendo moda ecológica e incentivando a reciclagem
+          para um futuro mais verde.
+        </p>
+        <p className='main__subtitle'>
+          Junte-se a nós e faça parte dessa transformação sustentável!
         </p>
       </div>
       <Featured />
