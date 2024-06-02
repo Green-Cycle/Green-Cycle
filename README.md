@@ -14,7 +14,10 @@ A história de sucesso de Green Cycle começou em um curso de formação onde a 
 Green Cycle se tornou um ponto de encontro para aqueles que queriam fazer escolhas mais conscientes. A plataforma oferecia não apenas produtos, mas também artigos educativos sobre sustentabilidade, eventos de reciclagem e até workshops online sobre como criar seus próprios produtos sustentáveis. Com o tempo, Green Cycle se tornou um modelo de como o comércio online poderia ser feito de maneira sustentável. A plataforma cresceu e se expandiu, mas o compromisso com a sustentabilidade permaneceu inalterado. Green Cycle provou que era possível fazer negócios de uma maneira que respeitasse o planeta e suas pessoas, e essa história inspirou muitos outros empreendedores a seguir um caminho semelhante.
 
 **Por que escolher o GreenCycle?**
-- 
+
+[**Documentação**](https://www.canva.com/design/DAGGqTyLOYk/FK2OQ0sVUWyK0QJ6aZQkaQ/edit?utm_content=DAGGqTyLOYk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+[**Apresentação**](https://www.canva.com/design/DAGGtvfkeGk/ZnSnPfxi4opkvdF-tmhM0A/edit?utm_content=DAGGtvfkeGk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 **Equipe:**
 - Web Developer (WD):
