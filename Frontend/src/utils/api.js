@@ -1,7 +1,7 @@
-const BASE_URL = 'https://green-cycle-ys6i.onrender.com'
+const BASE_URL = 'https://green-cycle-ys6i.onrender.com';
 
 const getAllProducts = async () => {
-  const response = await fetch(`${BASE_URL}/products'`, {
+  const response = await fetch(`${BASE_URL}/products`, {
     method: 'GET',
     cache: 'no-cache',
     headers: {
@@ -13,7 +13,8 @@ const getAllProducts = async () => {
 };
 
 const getFeaturedProducts = async () => {
-  const response = await fetch(`'${BASE_URL}/products/featured`, {
+
+  const response = await fetch(`${BASE_URL}/products/featured`, {
     method: 'GET',
     cache: 'no-cache',
     headers: {
@@ -25,31 +26,26 @@ const getFeaturedProducts = async () => {
 };
 
 const getProductsByCategory = async (category) => {
-  const response = await fetch(
-    `${BASE_URL}/products/category/${category}`,
-    {
-      method: 'GET',
-      cache: 'no-cache',
-      headers: {
-        'Content-type': 'application/json',
-      },
-    }
-  );
+  const response = await fetch(`${BASE_URL}/products/category/${category}`, {
+    method: 'GET',
+    cache: 'no-cache',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  });
   const products = await response.json();
   return products;
 };
 
 const getProductsByStore = async (company) => {
-  const response = await fetch(
-    `${BASE_URL}/products/company/${company}`,
-    {
-      method: 'GET',
-      cache: 'no-cache',
-      headers: {
-        'Content-type': 'application/json',
-      },
-    }
-  );
+
+  const response = await fetch(`${BASE_URL}/products/company/${company}`, {
+    method: 'GET',
+    cache: 'no-cache',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  });
   const products = await response.json();
   return products;
 };

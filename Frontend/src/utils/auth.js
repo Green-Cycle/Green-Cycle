@@ -1,5 +1,5 @@
-const BASE_URL = 'https://green-cycle-ys6i.onrender.com'
 
+const BASE_URL = 'https://green-cycle-ys6i.onrender.com';
 
 const register = (regData) => {
   return fetch(`${BASE_URL}/register`, {
