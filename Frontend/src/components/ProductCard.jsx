@@ -1,23 +1,37 @@
+import { useState } from 'react';
 import './ProductCard.css';
 
 function ProductCard({item, addItemToCart}) {
+  const [itemAdded, setItemAdded] = useState(false)
+
+  // ADD VISUAL FEEDBACK WHEN USER ADDS ITEM TO CART
+  const onAddingItem = () => {
+    setItemAdded(true)
+    addItemToCart(item)
+    setTimeout(()=>{setItemAdded(false)},1000)
+  }
+
   return (
     <div className='featured__card'>
+      {itemAdded && <div style={{position: 'fixed', height: '100%', width: '100%', top: 0, right: 0, backgroundColor: 'rgba(255,255,255,0.9)', borderRadius: '12px'}}>
+        <div style={{height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <p style={{fontSize: '1rem'}}>Item added to cart!</p>
+        </div>
+      </div>}
       <img src={item.cover} alt={item.name} />
       <div className='featured__container'>
-        <div>
+        <div className='featured__description-wrapper'>
           <p className='featured__text'>{item.name}</p>
-          <p>R${item.price}</p>
+          <p className='featured__price'>R${item.price}</p>
         </div>
 
         <button
           className='featured__button'
-          onClick={() => addItemToCart(item)}
+          onClick={onAddingItem}
           >
-          {' '}
           <img
-            src='/assets/shopping_bag.svg'
-            alt='shopping bag icon'
+            src='/assets/addToCart.svg'
+            alt='add to cart icon'
             className='featured__icon'
             />
         </button>
