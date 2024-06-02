@@ -63,7 +63,7 @@ function Login() {
       localStorage.setItem('token', result.token);
       setMessage('Login successful!');
     } else {
-      setMessage(result.message);
+      return setMessage(result.message);
     }
     navigate('/store');
   }
