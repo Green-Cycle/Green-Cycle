@@ -1,5 +1,8 @@
+const BASE_URL = 'https://green-cycle-ys6i.onrender.com'
+
+
 const register = (regData) => {
-  return fetch('https://green-cycle-ys6i.onrender.com/register', {
+  return fetch(`${BASE_URL}/register`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -23,7 +26,7 @@ const register = (regData) => {
 
 const login = async (loginData) => {
   try {
-    const response = await fetch('https://green-cycle-ys6i.onrender.com/login', {
+    const response = await fetch(`${BASE_URL}/login`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

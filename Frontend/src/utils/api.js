@@ -1,5 +1,7 @@
+const BASE_URL = 'https://green-cycle-ys6i.onrender.com'
+
 const getAllProducts = async () => {
-  const response = await fetch('https://green-cycle-ys6i.onrender.com/products', {
+  const response = await fetch(`${BASE_URL}/products'`, {
     method: 'GET',
     cache: 'no-cache',
     headers: {
@@ -11,7 +13,7 @@ const getAllProducts = async () => {
 };
 
 const getFeaturedProducts = async () => {
-  const response = await fetch('https://green-cycle-ys6i.onrender.com/products/featured', {
+  const response = await fetch(`'${BASE_URL}/products/featured`, {
     method: 'GET',
     cache: 'no-cache',
     headers: {
@@ -24,7 +26,7 @@ const getFeaturedProducts = async () => {
 
 const getProductsByCategory = async (category) => {
   const response = await fetch(
-    `https://green-cycle-ys6i.onrender.com/products/category/${category}`,
+    `${BASE_URL}/products/category/${category}`,
     {
       method: 'GET',
       cache: 'no-cache',
@@ -39,7 +41,7 @@ const getProductsByCategory = async (category) => {
 
 const getProductsByStore = async (company) => {
   const response = await fetch(
-    `https://green-cycle-ys6i.onrender.com/products/company/${company}`,
+    `${BASE_URL}/products/company/${company}`,
     {
       method: 'GET',
       cache: 'no-cache',
@@ -54,7 +56,7 @@ const getProductsByStore = async (company) => {
 
 // SEARCH PRODUCTS
 const searchProducts = async (query) => {
-  return fetch('https://green-cycle-ys6i.onrender.com/products/search', {
+  return fetch(`${BASE_URL}/products/search`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
