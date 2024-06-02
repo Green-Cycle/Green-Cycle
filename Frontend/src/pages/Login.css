@@ -77,7 +77,8 @@
   font-size: 12px;
 }
 
-.login__register>a{
+.login__register-link {
+  color: black;
   text-decoration: underline;
   text-underline-offset: 5px;
 }
