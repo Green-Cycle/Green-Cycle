@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Checkout from './pages/Checkout';
+import Product from './pages/Product';
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/store' element={<Store />} />
+          <Route path='/product/:id' element={<Product />} />
           <Route path='/maps' element={<Maps />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />

@@ -74,10 +74,24 @@ const searchProducts = async (query) => {
     );
 };
 
+const getProductById = async (id) => {
+
+  const response = await fetch(`${BASE_URL}/products/product/${id}`, {
+    method: 'GET',
+    cache: 'no-cache',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  });
+  const products = await response.json();
+  return products;
+};
+
 export {
   getAllProducts,
   getFeaturedProducts,
   getProductsByCategory,
   getProductsByStore,
   searchProducts,
+  getProductById
 };

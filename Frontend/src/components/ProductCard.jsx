@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ProductCard.css';
 
 function ProductCard({item, addItemToCart}) {
   const [itemAdded, setItemAdded] = useState(false)
+
+  const navigate = useNavigate();
 
   // ADD VISUAL FEEDBACK WHEN USER ADDS ITEM TO CART
   const onAddingItem = () => {
@@ -18,7 +21,7 @@ function ProductCard({item, addItemToCart}) {
           <p style={{fontSize: '1rem'}}>Item added to cart!</p>
         </div>
       </div>}
-      <img src={item.cover} alt={item.name} />
+      <img src={item.cover} alt={item.name} onClick={()=>navigate(`/product/${item._id}`)}/>
       <div className='featured__container'>
         <div className='featured__description-wrapper'>
           <p className='featured__text'>{item.name}</p>
