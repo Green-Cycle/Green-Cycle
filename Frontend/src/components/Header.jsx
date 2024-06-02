@@ -72,7 +72,7 @@ function Header() {
           {' '}
           <button onClick={toggleCart}>
             <img
-              src='/assets/shopping_bag.svg'
+              src='/assets/shoppingCart2.svg'
               alt='account icon'
               className='account-icon'
             />
