@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Checkout from './pages/Checkout';
-import Product from './components/Product';
+import Product from './pages/Product';
 import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
