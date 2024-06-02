@@ -13,7 +13,6 @@ const getAllProducts = async () => {
 };
 
 const getFeaturedProducts = async () => {
-
   const response = await fetch(`${BASE_URL}/products/featured`, {
     method: 'GET',
     cache: 'no-cache',
@@ -38,7 +37,6 @@ const getProductsByCategory = async (category) => {
 };
 
 const getProductsByStore = async (company) => {
-
   const response = await fetch(`${BASE_URL}/products/company/${company}`, {
     method: 'GET',
     cache: 'no-cache',
@@ -74,10 +72,34 @@ const searchProducts = async (query) => {
     );
 };
 
+const getUserData = async (token) => {
+  try {
+    const response = await fetch(`${BASE_URL}/users/me`, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch user data');
+    }
+
+    const data = await response.json();
+    return data; // Dados do usuário
+  } catch (error) {
+    console.error('Failed to fetch user data:', error.message);
+    return null;
+  }
+};
+
 export {
   getAllProducts,
   getFeaturedProducts,
   getProductsByCategory,
   getProductsByStore,
   searchProducts,
+  getUserData,
 };

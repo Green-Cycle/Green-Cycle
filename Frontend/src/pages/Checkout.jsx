@@ -1,12 +1,34 @@
 import { useCart } from '../contexts/CartContext';
 import './Checkout.css';
+import InfoToolTip from '../components/InfoToolTip';
+import { useState } from 'react';
 function Checkout() {
-  const { cartItems } = useCart();
-  const calculateTotal = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const { cartItems, discountCode } = useCart();
+
+  const calculateSubtotal = () => {
     return cartItems
       .reduce((total, item) => total + item.price * item.quantity, 0)
       .toFixed(2);
   };
+  const calculateTotal = () => {
+    const subtotal = cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+
+    const ship = 20;
+    const total = subtotal + ship;
+    return total.toFixed(2);
+  };
+
+  function openPopup() {
+    setIsOpen(true);
+    setTimeout(() => {
+      setIsOpen(false);
+      window.location.href = '/';
+    }, 3000);
+  }
   return (
     <div className='checkout__container'>
       {' '}
@@ -137,17 +159,38 @@ function Checkout() {
                 <span>{item.name}</span>
                 <span>{item.quantity} un</span>
               </div>
-              R${item.price.toFixed(2)}
+              R${parseFloat(item.price).toFixed(2)}
             </li>
           ))}
         </ul>
         <div className='checkout__total'>
-          <h3>Subtotal: R${calculateTotal()}</h3>
-          <h3>Frete: R${calculateTotal()}</h3>
-          <h3>Cupom de desconto: R${calculateTotal()}</h3>
-          <h3>Total: R${calculateTotal()}</h3>
+          <div className='checkout__total-items'>
+            <h3 className='checkout__subtitle'>Cupom de desconto:</h3>
+            <span>{discountCode ? 0 : '10%'}</span>
+          </div>
+          <div className='checkout__total-items'>
+            <h3 className='checkout__subtitle'>Subtotal: </h3>{' '}
+            <span>R${calculateSubtotal()}</span>
+          </div>
+
+          <div className='checkout__total-items'>
+            {' '}
+            <h3 className='checkout__subtitle'>Frete: </h3>
+            <span>R$20,00</span>
+          </div>
+          <div className='checkout__total-item'>
+            <h3>Total: </h3> <span>R${calculateTotal()}</span>
+          </div>
         </div>
-        <button className='checkout__button'>Finalizar Compra</button>
+        <button className='checkout__button' onClick={openPopup}>
+          Finalizar Compra
+        </button>
+        {isOpen && (
+          <InfoToolTip
+            isOpen={isOpen}
+            message={'Compra realizada com sucesso'}
+          />
+        )}
       </div>
     </div>
   );
