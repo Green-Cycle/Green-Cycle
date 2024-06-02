@@ -1,5 +1,5 @@
 @keyframes cardsIn {
-  from{
+  from {
     opacity: 0;
     transform: translateY(10px);
   }
@@ -7,12 +7,11 @@
     transform: translateY(0px);
     opacity: 1;
   }
-  
 }
 
 .featured {
   padding: 1rem;
-  background-color: #d3d2cd;
+  background-color: #dfddd2;
 }
 
 .featured__title {
@@ -87,6 +86,16 @@
   text-overflow: ellipsis;
 }
 
+.fetureed__store-link {
+  text-decoration: none;
+  color: #454545;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin: auto;
+}
+
 @media screen and (min-width: 880px) {
   .featured {
     padding: 3rem;
@@ -103,7 +112,7 @@
     gap: 2rem;
     max-width: 1000px;
     margin: auto;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
     flex-wrap: wrap;
   }
 
@@ -131,5 +140,10 @@
 
   .featured__text {
     max-width: 200px;
+  }
+
+  .fetureed__store-link {
+    justify-content: end;
+    max-width: 970px;
   }
 }
