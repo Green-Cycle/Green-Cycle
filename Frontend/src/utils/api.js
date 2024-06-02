@@ -13,6 +13,7 @@ const getAllProducts = async () => {
 };
 
 const getFeaturedProducts = async () => {
+
   const response = await fetch(`${BASE_URL}/products/featured`, {
     method: 'GET',
     cache: 'no-cache',
@@ -37,6 +38,7 @@ const getProductsByCategory = async (category) => {
 };
 
 const getProductsByStore = async (company) => {
+
   const response = await fetch(`${BASE_URL}/products/company/${company}`, {
     method: 'GET',
     cache: 'no-cache',

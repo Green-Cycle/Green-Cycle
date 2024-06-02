@@ -1,7 +1,7 @@
 import './Register.css';
 import './Login.css';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { login } from '../utils/auth';
 
 function Login() {
@@ -54,25 +54,21 @@ function Login() {
     setEmailError({ error: false, message: '' });
 
     const loginData = { email, password };
+    console.log(loginData)
     const result = await login(loginData);
+
 
     if (result.token) {
       // Save token to localStorage or context/state management
       localStorage.setItem('token', result.token);
-
       setMessage('Login successful!');
     } else {
       setMessage(result.message);
     }
-  };
-  const token = localStorage.getItem('token');
-  useEffect(() => {
-    if (token) {
-      navigate('/maps');
-    }
-  }, [token, navigate]);
-
-  return (
+    navigate('/store');
+  }
+    
+    return (
     <div className='login'>
       <div className='login__wrapper'>
         <h2 className='login__title'>LOGIN</h2>
@@ -108,11 +104,15 @@ function Login() {
           <div className='login__button-wrapper'>
             <button type='submit'>Login</button>
             <p className='login__register'>
-              Ainda não possui um cadastro? <a>Cadastre-se.</a>{' '}
+              Ainda não possui um cadastro? <Link className='login__register-link' to='/register'>Cadastre-se.</Link>{' '}
             </p>
           </div>
         </form>
-        {message && <p>{message}</p>}
+        {message && (
+          <div className='errorPopup'>
+            <p>{message}</p>
+          </div>
+        )}
       </div>
     </div>
   );
