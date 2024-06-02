@@ -9,6 +9,7 @@ import {
 } from '../utils/api';
 
 import { useCart } from '../contexts/CartContext';
+import ProductCard from '../components/ProductCard';
 
 function Store() {
   const { addItemToCart } = useCart();
@@ -111,27 +112,7 @@ function Store() {
           </div>
           <div className='lojamain__card-list'>
             {allProducts.map((item) => (    
-              <div className='featured__card' key={item._id}>
-                <img src={item.cover} alt={item.name} />
-                <div className='featured__container'>
-                  <div>
-                    <p className='featured__text'>{item.name}</p>
-                    <p>R${item.price}</p>
-                  </div>
-
-                  <button
-                    className='featured__button'
-                    onClick={() => addItemToCart(item)}
-                    >
-                    {' '}
-                    <img
-                      src='../assets/shopping_bag.svg'
-                      alt='shopping bag icon'
-                      className='featured__icon'
-                      />
-                  </button>
-                </div>
-              </div>
+              <ProductCard item={item} addItemToCart={addItemToCart} key={item._id} />
             ))}
           </div>
         </div>

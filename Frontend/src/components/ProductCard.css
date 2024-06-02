@@ -101,10 +101,14 @@
 
   .featured__button {
     margin-bottom: 10%;
+    font-size: 2rem;
+    color: #5a5a5a;
+    opacity: 0.5;
   }
 
   .featured__button:hover{
     animation: addButtonAnimation 500ms both;
+    opacity: 1;
   }
 
   .featured__icon {

@@ -32,13 +32,14 @@ function ProductCard({item, addItemToCart}) {
 
         <button
           className='featured__button'
+          style={{color: 'black'}}
           onClick={onAddingItem}
-          >
-          <img
+          >+
+          {/* <img
             src='/assets/addToCart.svg'
             alt='add to cart icon'
             className='featured__icon'
-            />
+            /> */}
         </button>
       </div>
     </div>
