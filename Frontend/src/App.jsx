@@ -13,7 +13,7 @@ import Checkout from './pages/Checkout';
 import Product from './pages/Product';
 import { AuthProvider } from './contexts/AuthContext';
 import Sobre from './pages/Sobre';
-
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -28,7 +28,10 @@ function App() {
             <Route path='/maps' element={<Maps />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/checkout' element={<Checkout />} />
+            <Route element={<ProtectedRoute />}>
+              <Route path='/checkout' element={<Checkout />} />
+            </Route>
+
             <Route path='/sobre' element={<Sobre />} />
           </Routes>
           <Footer />
