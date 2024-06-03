@@ -2,6 +2,10 @@
   padding-right: 0.5rem;
 }
 
+.sobre h1 {
+  font-weight: 300;
+}
+
 .sobre__title-box {
   display: flex;
   align-items: center;
@@ -22,6 +26,10 @@
   text-align: left;
   column-gap: 20px;
   height: 400px; /* Redução da altura para dispositivos móveis */
+}
+
+.sobre p {
+  font-weight: 400;
 }
 
 .sobre__folder-title {

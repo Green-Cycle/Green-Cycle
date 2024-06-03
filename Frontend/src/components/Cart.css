@@ -96,6 +96,7 @@
 
 .cart__input {
   width: calc(60% - 40px);
+
   padding: 10px;
   border: 1px solid #545454;
   border-radius: 5px;
@@ -169,6 +170,7 @@
   .cart__discount {
     justify-content: flex-start;
     padding-bottom: 0;
+    width: 60%;
   }
 
   .cart__payment {

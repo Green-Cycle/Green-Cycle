@@ -1,8 +1,9 @@
 .mapsInfo {
   display: flex;
+
   flex-direction: column;
   padding: 10%;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(3, 0, 2, 0.8)),
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(3, 0, 2, 0.7)),
     url('../../public/assets/findMap.svg') no-repeat;
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.5);
@@ -10,20 +11,24 @@
   align-items: flex-start;
   text-align: left;
   column-gap: 20px;
-  height: 400px; /* Redução da altura para dispositivos móveis */
+  height: 400px;
+}
+
+.mapsInfo h1 {
+  font-weight: 300;
 }
 
 .mapsInfo__container {
-  width: 90%; /* Ajuste da largura para ocupar a largura total do contêiner */
-  padding: 10px; /* Ajuste do preenchimento para dispositivos móveis */
+  width: 90%;
+  padding: 10px;
 }
 
 .mapsInfo__paragraph {
-  margin-bottom: 20px; /* Redução da margem inferior para dispositivos móveis */
+  margin-bottom: 20px;
 }
 
 .mapsInfo__button {
-  width: 100%; /* Ajuste da largura para ocupar a largura total do contêiner pai */
+  width: 100%;
   height: 38px;
   color: white;
   text-decoration: none;
@@ -35,11 +40,11 @@
 @media screen and (min-width: 880px) {
   .mapsInfo {
     justify-content: center;
-    height: 530px; /* Ajuste da altura para telas maiores */
+    height: 530px;
   }
 
   .mapsInfo__container {
-    width: 60%; /* Redução da largura para telas maiores */
+    width: 60%;
     text-align: left;
   }
 }

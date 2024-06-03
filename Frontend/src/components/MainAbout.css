@@ -16,6 +16,7 @@
   text-align: center;
   padding-top: 15px;
   padding-bottom: 24px;
+  font-weight: 300;
 }
 
 .about__paragraph {
@@ -47,6 +48,5 @@
   .about__title {
     text-align: left;
     padding-top: 0;
-    padding-bottom: 0;
   }
 }

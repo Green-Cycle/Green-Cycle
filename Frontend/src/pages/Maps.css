@@ -42,6 +42,7 @@
 .maps__subtitle {
   display: flex;
   text-align: justify;
+  font-weight: 400;
 }
 
 @media screen and (min-width: 500px) {

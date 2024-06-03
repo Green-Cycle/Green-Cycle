@@ -8,23 +8,24 @@
   background-color: black;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centralizando o conteúdo */
+  align-items: center;
   justify-content: center;
-  padding: 0 1rem; /* Ajuste do padding para dispositivos móveis */
+  padding: 0 1rem;
 }
 
 .main__title {
   color: white;
-  font-size: 2rem; /* Redução do tamanho do título para dispositivos móveis */
-  text-align: center; /* Centralizando o título */
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 300;
 }
 
 .main__subtitle {
   color: white;
-  text-align: center; /* Centralizando o texto */
-  font-weight: 300;
-  width: 100%; /* Ajuste da largura para ocupar a largura total do contêiner */
-  max-width: 70ch; /* Limitando a largura máxima */
+  text-align: center;
+
+  width: 100%;
+  max-width: 70ch;
 }
 
 @media screen and (min-width: 880px) {
