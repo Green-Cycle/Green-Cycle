@@ -32,4 +32,4 @@ Bem-vindo ao Marketplace de GreenCycle! Abaixo estão algumas instruções para 
 5. **Suporte**:
    - Se você tiver alguma dúvida sobre um produto ou encontrar algum problema durante o processo de compra, entre em contato conosco clicando no icone de contato presente na barra de navegação de nosso site.
 
-Esperamos que estas instruções facilitem sua experiência ao usar nosso Marketplace de Produtos Reciclados. Para mais informações sobre o site, consulte a seção "Sobre" do site.
+Esperamos que estas instruções facilitem sua experiência ao usar o GreenCycle. Para mais informações sobre o site, consulte a seção "Sobre" do site.
