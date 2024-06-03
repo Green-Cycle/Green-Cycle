@@ -82,7 +82,14 @@ function Store() {
   return (
     <>
       <div className='lojamain'>
-        <h2 className='lojamain__title'>PRODUTOS DE NOSSOS PARCEIROS</h2>
+        <div className='lojamain__title-box'>
+          <img
+            src='./assets/store_icon.svg'
+            alt='Icone de uma loja'
+            className='lojamain__title-icon'
+          />
+          <h2 className='lojamain__title'>PRODUTOS</h2>
+        </div>
         <div className='lojamain__container'>
           <div className='lojamain__categories'>
             <span>CATEGORIAS:</span>

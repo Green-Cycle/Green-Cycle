@@ -86,6 +86,8 @@ function Register() {
               placeholder='Nome Completo'
               value={regData.name}
               onChange={handleChange}
+              minLength={10}
+              maxLength={40}
             />
             {errors.name && (
               <p className='register__input-error'>{errors.name}</p>
@@ -112,6 +114,8 @@ function Register() {
               placeholder='E-mail'
               value={regData.email}
               onChange={handleChange}
+              minLength={5}
+              maxLength={50}
             />
             {errors.email && (
               <p className='register__input-error'>{errors.email}</p>
@@ -138,6 +142,8 @@ function Register() {
               placeholder='Senha'
               value={regData.password}
               onChange={handleChange}
+              minLength={8}
+              maxLength={12}
             />
             {errors.password && (
               <p className='register__input-error'>{errors.password}</p>

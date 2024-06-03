@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: #dfddd2;
-  padding: 5%;
+  padding: 3rem 1rem;
   align-items: center;
 }
 
@@ -46,6 +46,10 @@
 }
 
 @media screen and (min-width: 500px) {
+  .maps__container {
+    padding: 4rem 2rem;
+  }
+
   .maps {
     width: 500px;
     height: 250px;

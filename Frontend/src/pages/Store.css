@@ -7,10 +7,17 @@
   margin: auto;
 }
 
+.lojamain__title-box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-bottom: 1rem;
+  justify-content: center;
+}
+
 .lojamain__title {
   font-weight: 400;
   font-size: 1.5rem;
-  padding-bottom: 1rem;
 }
 
 .lojamain__card-list {
@@ -57,8 +64,11 @@
     padding: 4rem 2rem;
   }
 
-  .lojamain__title {
+  .lojamain__title-box {
     padding-bottom: 3rem;
+  }
+
+  .lojamain__title {
     font-size: 2rem;
   }
 
