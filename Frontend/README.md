@@ -33,7 +33,7 @@ Este repositório contém o código-fonte do frontend para o GreenCycle, um mark
 ## Roadmap
 - Fechamento dos popups com a tecla ESC ou clicando fora dele;
 - Implementação do checkout final;
-- Criação da página com o perfil do usuário;
+- Criação da página de perfil do usuário;
 - Criação da página para adição e controle dos produtos para os vendedores
 
 
