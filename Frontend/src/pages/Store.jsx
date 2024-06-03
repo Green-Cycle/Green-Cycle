@@ -25,10 +25,10 @@ function Store() {
     'Utilidades',
   ];
   const stores = ['Loja 1', 'Loja 2', 'Loja 3', 'Loja 4', 'Loja 5'];
-  
+
   // INITIALIZE USESEARCH PARAMS
   const [searchParams] = useSearchParams();
-  const query = searchParams.get('q')
+  const query = searchParams.get('q');
 
   useEffect(() => {
     // Define fetchData as an async function
@@ -48,16 +48,15 @@ function Store() {
         console.error('Error fetching data:', error);
       }
     }
-  
+
     // Call fetchData immediately
     fetchData();
   }, [query]); // Include query as a dependency
 
   const fetchProductsByCategory = async (category) => {
     try {
-      console.log(category);
       const products = await getProductsByCategory(category);
-      console.log('Produtos recebidos:', products);
+
       setAllProducts(products);
     } catch (error) {
       console.error('Erro ao buscar produtos:', error);
@@ -66,7 +65,7 @@ function Store() {
 
   const fetchProductsByCompany = async (company) => {
     try {
-      const products = await getProductsByStore(company);   
+      const products = await getProductsByStore(company);
       setAllProducts(products);
     } catch (error) {
       console.error('Erro ao buscar produtos:', error);
@@ -104,15 +103,23 @@ function Store() {
             <div className='lojamain__order'>
               {' '}
               {stores.map((company, index) => (
-                <button className='lojamain__button' key={index} onClick={() => handleCompanyClick(company)}>
+                <button
+                  className='lojamain__button'
+                  key={index}
+                  onClick={() => handleCompanyClick(company)}
+                >
                   {company}
                 </button>
               ))}
             </div>
           </div>
           <div className='lojamain__card-list'>
-            {allProducts.map((item) => (    
-              <ProductCard item={item} addItemToCart={addItemToCart} key={item._id} />
+            {allProducts.map((item) => (
+              <ProductCard
+                item={item}
+                addItemToCart={addItemToCart}
+                key={item._id}
+              />
             ))}
           </div>
         </div>

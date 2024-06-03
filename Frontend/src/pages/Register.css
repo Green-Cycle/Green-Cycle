@@ -103,6 +103,7 @@
   }
   .register form {
     width: 80%;
+    height: 500px;
   }
   .register button {
     width: 45%;
