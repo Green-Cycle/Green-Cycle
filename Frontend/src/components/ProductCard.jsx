@@ -26,16 +26,20 @@ function ProductCard({ item, addItemToCart }) {
             width: '100%',
             top: 0,
             right: 0,
-            backgroundColor: 'rgba(255,255,255,0.9)',
+            backgroundColor: 'rgba(0,0,0,0.25)',
             borderRadius: '12px',
           }}
         >
           <div
             style={{
-              height: '100%',
+              height: '205px',
+              width: '512px',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
+              backgroundColor: '#fff',
+              margin: '260px auto',
+              borderRadius: '20px',
             }}
           >
             <p style={{ fontSize: '2rem' }}>Item adicionado à sacola!</p>

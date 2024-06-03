@@ -90,6 +90,7 @@ function Header() {
                 />
               </button>
               <button
+                className='header__user-button'
                 onClick={() => {
                   setUserWindow(true);
                 }}
@@ -112,7 +113,7 @@ function Header() {
                   </button>
                   <span className='header__username'>Olá, {user?.name}</span>
                   <button className='header__logout-button' onClick={onLogout}>
-                    LOGOUT
+                    SAIR
                   </button>
                 </div>
               )}
