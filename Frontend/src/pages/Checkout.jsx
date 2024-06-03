@@ -6,6 +6,19 @@ function Checkout() {
   const [isOpen, setIsOpen] = useState(false);
   const { cartItems, discountCode } = useCart();
 
+  const [formData, setFormData] = useState({
+    rua: '',
+    numero: '',
+    cep: '',
+    complemento: '',
+    cidade: '',
+    bairro: '',
+    numeroCartao: '',
+    dataValidade: '',
+    codigoSeguranca: '',
+    nomeCartao: '',
+  });
+
   const calculateSubtotal = () => {
     return cartItems
       .reduce((total, item) => total + item.price * item.quantity, 0)
@@ -29,6 +42,16 @@ function Checkout() {
       window.location.href = '/';
     }, 3000);
   }
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const isFormValid = () => {
+    return Object.values(formData).every((value) => value.trim() !== '');
+  };
+
   return (
     <div className='checkout__container'>
       {' '}
@@ -42,6 +65,8 @@ function Checkout() {
                 type='text'
                 name='rua'
                 placeholder='Rua'
+                value={formData.rua}
+                onChange={handleInputChange}
               />
             </div>
             <div className='checkout__fit'>
@@ -51,6 +76,8 @@ function Checkout() {
                   type='number'
                   name='numero'
                   placeholder='Número'
+                  value={formData.numero}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className='checkout__input-wrapper'>
@@ -60,6 +87,8 @@ function Checkout() {
                   name='cep'
                   wrapper
                   placeholder='CEP'
+                  value={formData.cep}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -69,6 +98,8 @@ function Checkout() {
                 type='text'
                 name='complemento'
                 placeholder='Complemento'
+                value={formData.complemento}
+                onChange={handleInputChange}
               />
             </div>
             <div className='checkout__input-wrapper'>
@@ -77,6 +108,8 @@ function Checkout() {
                 type='text'
                 name='cidade'
                 placeholder='Cidade'
+                value={formData.cidade}
+                onChange={handleInputChange}
               />
             </div>
             <div className='checkout__input-wrapper'>
@@ -85,9 +118,22 @@ function Checkout() {
                 type='text'
                 name='bairro'
                 placeholder='Bairro'
+                value={formData.bairro}
+                onChange={handleInputChange}
               />
             </div>
           </form>
+          <div className='checkout__save'>
+            <input
+              type='checkbox'
+              id='saveAddress'
+              name='saveAddress'
+              value='saveAddress'
+            />
+            <label htmlFor='saveAddress'>
+              Salvar endereço para próximas compras
+            </label>
+          </div>
         </div>
         <div className='checkout__card'>
           <h2 className='checkout__title'>PAGAMENTO</h2>{' '}
@@ -96,8 +142,10 @@ function Checkout() {
               <input
                 className='checkout__input'
                 type='number'
-                name='numero do cartão'
+                name='numeroCartao'
                 placeholder='Numero do cartão'
+                value={formData.numeroCartao}
+                onChange={handleInputChange}
               />
             </div>
             <div className='checkout__fit'>
@@ -105,16 +153,20 @@ function Checkout() {
                 <input
                   className='checkout__input'
                   type='text'
-                  name='data'
+                  name='dataValidade'
                   placeholder='Validade (MM/AA)'
+                  value={formData.dataValidade}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className='checkout__input-wrapper'>
                 <input
                   className='checkout__input'
                   type='number'
-                  name='segurança'
+                  name='codigoSeguranca'
                   placeholder='Código de segurança'
+                  value={formData.codigoSeguranca}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -122,8 +174,10 @@ function Checkout() {
               <input
                 className='checkout__input'
                 type='text'
-                name='cardname'
+                name='nomeCartao'
                 placeholder='Nome no cartão'
+                value={formData.nomeCartao}
+                onChange={handleInputChange}
               />
             </div>
             <div className='checkout__input-wrapper'>
@@ -132,6 +186,8 @@ function Checkout() {
                 type='text'
                 name='cidade'
                 placeholder='Cidade'
+                value={formData.cidade}
+                onChange={handleInputChange}
               />
             </div>
             <div className='checkout__input-wrapper'>
@@ -140,9 +196,22 @@ function Checkout() {
                 type='text'
                 name='bairro'
                 placeholder='Bairro'
+                value={formData.bairro}
+                onChange={handleInputChange}
               />
             </div>
           </form>
+          <div className='checkout__save'>
+            <input
+              type='checkbox'
+              id='saveCard'
+              name='saveCard'
+              value='saveCard'
+            />
+            <label htmlFor='saveCard'>
+              Salvar dados de pagamento para próximas compras
+            </label>
+          </div>
         </div>
       </div>{' '}
       <div className='checkout__cart'>
@@ -182,7 +251,11 @@ function Checkout() {
             <h3>Total: </h3> <span>R${calculateTotal()}</span>
           </div>
         </div>
-        <button className='checkout__button' onClick={openPopup}>
+        <button
+          className='checkout__button'
+          onClick={openPopup}
+          disabled={!isFormValid()}
+        >
           Finalizar Compra
         </button>
         {isOpen && (

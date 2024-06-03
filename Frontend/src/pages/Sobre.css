@@ -1,0 +1,103 @@
+.sobre__title-icon {
+  padding-right: 0.5rem;
+}
+
+.sobre__title-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+.sobre__folder {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  background: url('../../public/assets/hands-mobile.png') no-repeat;
+  background-size: cover;
+
+  color: white;
+  align-items: flex-start;
+  text-align: left;
+  column-gap: 20px;
+  height: 400px; /* Redução da altura para dispositivos móveis */
+}
+
+.sobre__folder-title {
+  font-size: 48px;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+.sobre__main-container {
+  display: grid;
+  padding: 2rem;
+  grid-template-areas:
+    'vasos'
+    'paragraph1'
+    'kids'
+    'paragraph2';
+}
+
+.sobre__main-vasos {
+  grid-area: paragraph1;
+  text-align: justify;
+  padding-top: 2rem;
+}
+
+.sobre__main-image_vasos {
+  width: 350px;
+  grid-area: vasos;
+  justify-self: center;
+}
+
+.sobre__main-kids {
+  grid-area: paragraph2;
+  text-align: justify;
+  padding-top: 2rem;
+}
+
+.sobre__main-image_kids {
+  width: 350px;
+  grid-area: kids;
+  justify-self: center;
+}
+
+@media screen and (min-width: 966px) {
+  .sobre__folder {
+    background: url('../../public/assets/hands.png') no-repeat;
+    background-size: cover;
+  }
+  .sobre__main-box {
+    display: flex;
+    flex-direction: column;
+    padding-top: 96px;
+  }
+  .sobre__main-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    column-gap: 80px;
+    text-align: justify;
+
+    padding: 0 96px 96px;
+  }
+
+  .sobre__main-image_kids {
+    width: 100%;
+  }
+
+  .sobre__main-image_vasos {
+    width: 100%;
+  }
+  .sobre__main-vasos {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .sobre__main-kids {
+    width: 100%;
+    padding-top: 0;
+  }
+}

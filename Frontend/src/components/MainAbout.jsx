@@ -1,4 +1,4 @@
-import './About.css';
+import './MainAbout.css';
 function About() {
   return (
     <div className='about'>

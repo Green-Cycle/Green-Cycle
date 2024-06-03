@@ -1,5 +1,5 @@
 import Featured from './Featured';
-import About from './About';
+import About from './MainAbout';
 import MapsInfo from './MapsInfo';
 
 import './Main.css';

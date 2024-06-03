@@ -158,7 +158,7 @@ function Register() {
           <button className='register__button-wrapper' type='submit'>
             Cadastrar
           </button>
-          {message && <p>{message}</p>}
+
           <span className='register__login '>
             Já é um membro?
             <Link to='/login' className='auth__link'>
@@ -166,6 +166,11 @@ function Register() {
             </Link>
           </span>
         </form>
+        {message && (
+          <div className='errorPopup'>
+            <p>{message}</p>
+          </div>
+        )}
       </div>
     </div>
   );
