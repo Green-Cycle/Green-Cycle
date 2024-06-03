@@ -1,40 +1,49 @@
 import './Nav.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 function Nav({ menuOpen, setMenuOpen }) {
-  const navigate = useNavigate();
-
-  const handleClick = (path) => {
-    setMenuOpen(false);
-    navigate(path);
-  };
-
   const handleScrollToFooter = () => {
-    setMenuOpen(false);
+    () => setMenuOpen(false);
     const footer = document.getElementById('footer');
     if (footer) {
       footer.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.error('Footer not found');
     }
   };
+
   return (
     <nav>
       <ul className={menuOpen ? 'header__hamburger' : 'nav'}>
         <li className='nav__li'>
-          <button className='nav__link' onClick={() => handleClick('/store')}>
+          <Link
+            className='nav__link'
+            to='/store'
+            onClick={() => setMenuOpen(false)}
+          >
             LOJA
-          </button>
+          </Link>
         </li>
         <li className='nav__li'>
-          <button className='nav__link' onClick={() => handleClick('/sobre')}>
+          <Link
+            className='nav__link'
+            to='/sobre'
+            onClick={() => setMenuOpen(false)}
+          >
             SOBRE
-          </button>
+          </Link>
         </li>
         <li className='nav__li'>
-          <button className='nav__link' onClick={() => handleClick('/maps')}>
+          <Link
+            className='nav__link'
+            to='/maps'
+            onClick={() => setMenuOpen(false)}
+          >
             PONTOS DE COLETA
-          </button>
+          </Link>
         </li>
         <li className='nav__li'>
-          <button className='nav__link' onClick={handleScrollToFooter}>
+          <button onClick={handleScrollToFooter} className='nav__link'>
             CONTATO
           </button>
         </li>
