@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 function Footer() {
   return (
@@ -10,7 +11,9 @@ function Footer() {
             alt='icone de folha'
             className='footer__icon'
           />
-          <p>Sobre</p>
+          <Link to={'/sobre'} className='footer__link'>
+            Sobre
+          </Link>
         </div>
       </div>
 

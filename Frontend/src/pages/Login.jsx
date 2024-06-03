@@ -102,7 +102,7 @@ function Login() {
               className='login__input'
               name='password'
               type='password'
-              placeholder='password'
+              placeholder='Senha'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
