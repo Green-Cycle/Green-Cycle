@@ -27,7 +27,7 @@ function Cart({
         <button className='cart__close-button' onClick={toggleCart}>
           <img src='/assets/close.svg' alt='close icon' />
         </button>
-        <h2>Carrinho</h2>
+        <h2>Sacola</h2>
         <ul className='cart__list'>
           {cartItems.map((item) => (
             <li key={item._id} className='cart__item'>
@@ -56,7 +56,7 @@ function Cart({
               onClick={handleApplyDiscount}
               className='cart__discount-button'
             >
-              Aplicar Desconto
+              Aplicar 
             </button>
             <p>{discountMessage}</p>
           </div>
