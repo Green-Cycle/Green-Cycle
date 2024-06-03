@@ -1,6 +1,7 @@
 import './Featured.css';
 import Cart from './Cart';
 import Loading from './Loading'
+import ProductCard from './ProductCard';
 import { getFeaturedProducts } from '../utils/api';
 import { useEffect, useState } from 'react';
 import { useCart } from '../contexts/CartContext';
@@ -27,27 +28,7 @@ function Featured() {
       {isLoading && <Loading />}
       <div className='featured__card-list'>
         {featured.map((item) => (
-          <div className='featured__card' key={item._id}>
-            <img src={item.cover} alt={item.name} />
-            <div className='featured__container'>
-              <div>
-                <p className='featured__text'>{item.name}</p>
-                <p>R${item.price}</p>
-              </div>
-
-              <button
-                className='featured__button'
-                onClick={() => addItemToCart(item)}
-              >
-                {' '}
-                <img
-                  src='../assets/shopping_bag.svg'
-                  alt='shopping bag icon'
-                  className='featured__icon'
-                />
-              </button>
-            </div>
-          </div>
+          <ProductCard item={item} addItemToCart={addItemToCart} key={item._id} />
         ))}
       </div>
     </div>

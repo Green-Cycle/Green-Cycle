@@ -1,8 +1,8 @@
 .footer {
-  background-color: #4a624c;
+  background-color: #445a46;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 40px 64px;
   color: white;
   align-items: center;
   text-align: center;
@@ -31,6 +31,11 @@
   column-gap: 15px;
 }
 
+.footer__mail {
+  text-decoration: none;
+  color: #fff;
+}
+
 .footer__icon {
   width: 20px;
   height: 20px;
@@ -41,7 +46,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    text-align: start;
   }
 
   .footer__columns {
