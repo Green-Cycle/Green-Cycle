@@ -37,10 +37,15 @@
   margin: 0;
   padding-bottom: 1rem;
 }
+.sobre__main-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .sobre__main-container {
   display: grid;
-  padding: 2rem;
+  padding: 1rem;
   grid-template-areas:
     'vasos'
     'paragraph1'
@@ -78,8 +83,6 @@
     background-size: cover;
   }
   .sobre__main-box {
-    display: flex;
-    flex-direction: column;
     padding-top: 96px;
   }
   .sobre__main-container {
