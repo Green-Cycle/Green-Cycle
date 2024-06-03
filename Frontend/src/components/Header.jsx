@@ -98,7 +98,6 @@ function Header() {
                 <button className='header__close-button' onClick={() => {setUserWindow(false)}}>X</button>
                 <span className='header__username'>Olá, {user?.name}</span>
                 <button className='header__logout-button' onClick={onLogout}>LOGOUT</button>
-
               </div>}
             </>
           )}
