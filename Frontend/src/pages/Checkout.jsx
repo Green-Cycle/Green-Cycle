@@ -67,6 +67,8 @@ function Checkout() {
                 placeholder='Rua'
                 value={formData.rua}
                 onChange={handleInputChange}
+                minLength={3}
+                maxLength={70}
               />
             </div>
             <div className='checkout__fit'>
@@ -100,6 +102,8 @@ function Checkout() {
                 placeholder='Complemento'
                 value={formData.complemento}
                 onChange={handleInputChange}
+                minLength={1}
+                maxLength={10}
               />
             </div>
             <div className='checkout__input-wrapper'>
@@ -110,6 +114,8 @@ function Checkout() {
                 placeholder='Cidade'
                 value={formData.cidade}
                 onChange={handleInputChange}
+                minLength={1}
+                maxLength={30}
               />
             </div>
             <div className='checkout__input-wrapper'>
@@ -120,6 +126,8 @@ function Checkout() {
                 placeholder='Bairro'
                 value={formData.bairro}
                 onChange={handleInputChange}
+                minLength={1}
+                maxLength={30}
               />
             </div>
           </form>
@@ -157,6 +165,8 @@ function Checkout() {
                   placeholder='Validade (MM/AA)'
                   value={formData.dataValidade}
                   onChange={handleInputChange}
+                  minLength={4}
+                  maxLength={4}
                 />
               </div>
               <div className='checkout__input-wrapper'>
@@ -178,6 +188,8 @@ function Checkout() {
                 placeholder='Nome no cartão'
                 value={formData.nomeCartao}
                 onChange={handleInputChange}
+                minLength={2}
+                maxLength={50}
               />
             </div>
             <div className='checkout__input-wrapper'>
@@ -188,6 +200,8 @@ function Checkout() {
                 placeholder='Cidade'
                 value={formData.cidade}
                 onChange={handleInputChange}
+                minLength={1}
+                maxLength={30}
               />
             </div>
             <div className='checkout__input-wrapper'>
@@ -198,6 +212,8 @@ function Checkout() {
                 placeholder='Bairro'
                 value={formData.bairro}
                 onChange={handleInputChange}
+                minLength={1}
+                maxLength={30}
               />
             </div>
           </form>
