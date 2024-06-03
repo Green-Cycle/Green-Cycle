@@ -18,7 +18,7 @@ function ProductCard({item, addItemToCart}) {
     <div className='featured__card'>
       {itemAdded && <div style={{position: 'fixed', height: '100%', width: '100%', top: 0, right: 0, backgroundColor: 'rgba(255,255,255,0.9)', borderRadius: '12px'}}>
         <div style={{height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-          <p style={{fontSize: '1rem'}}>Item added to cart!</p>
+          <p style={{fontSize: '2rem'}}>Item added to cart!</p>
         </div>
       </div>}
       <img src={item.cover} alt={item.name} onClick={()=>{
