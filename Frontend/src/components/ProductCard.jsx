@@ -22,7 +22,6 @@ function ProductCard({item, addItemToCart}) {
         </div>
       </div>}
       <img src={item.cover} alt={item.name} onClick={()=>{
-        console.log('clicked')
         navigate(`/product/${item._id}`)}}/>
       <div className='featured__container'>
         <div className='featured__description-wrapper'>
