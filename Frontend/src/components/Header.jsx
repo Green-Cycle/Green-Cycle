@@ -139,7 +139,7 @@ function Header() {
                   </button>
                   <span className='header__username'>Olá, {user?.name}</span>
                   <button className='header__logout-button' onClick={onLogout}>
-                    SAIR
+                    LOGOUT
                   </button>
                 </div>
               )}
