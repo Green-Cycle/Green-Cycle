@@ -68,14 +68,22 @@ function Header() {
             </>
           )}
           {!isLoggedIn && !isLoginPage && !isRegisterPage && (
-            <div className='header__login-box'>
-              <Link className='header__login-button' to={'/login'}>
-                LOGIN
-              </Link>
-              <span>
-                {' '}
-                ou cadastre-se <Link to={'/register'}>aqui</Link>
-              </span>
+            <div className='header__corner-menu'>
+              <button onClick={toggleCart}>
+                <img
+                  src='/assets/shopping_bag.svg'
+                  alt='account icon'
+                  className='account-icon'
+                />
+              </button>
+              <div className='header__login-box'>
+                <Link className='header__login-button' to={'/login'}>
+                  LOGIN
+                </Link>
+                <p className='header__signup-link'>
+                  ou <Link to={'/register'} className='header__signup-link'>crie sua conta</Link>
+                </p>
+              </div>
             </div>
           )}
           <button onClick={toggleMenu}>

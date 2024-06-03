@@ -29,6 +29,14 @@
   display: flex;
   align-items: center;
 }
+
+.header__corner-menu{
+  display: flex;
+  gap: 40px;
+  align-items:center;
+}
+
+
 .header__login-box {
   display: flex;
   align-items: center;
@@ -46,7 +54,21 @@
   border-radius: 0.5rem;
   line-height: 1rem;
   text-decoration: none;
+  transition: 250ms ease-in-out;
 }
+
+.header__login-button:hover{
+  background-color: #5F6368;
+  color: white;
+  border: none;
+}
+
+.header__signup-link{
+  margin-top: 0.4rem;
+  font-size: 14px;
+  color: black;
+}
+
 .header__hamburguer {
   display: none;
 }
