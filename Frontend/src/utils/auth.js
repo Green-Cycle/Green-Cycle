@@ -13,7 +13,6 @@ const register = (regData) => {
       return response.json();
     })
     .then((res) => {
-      console.log(res);
       return res;
     })
     .catch((res) =>
@@ -39,7 +38,7 @@ const login = async (loginData) => {
     }
 
     const data = await response.json();
-    console.log('Login efetuado', data);
+
     return data;
   } catch (error) {
     console.error('Login failed:', error.message);

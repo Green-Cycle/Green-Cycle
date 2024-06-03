@@ -1,8 +1,9 @@
 .maps__container {
   display: flex;
   flex-direction: column;
-  background-color: #d3d2cd;
+  background-color: #dfddd2;
   padding: 5%;
+  align-items: center;
 }
 
 .maps {
@@ -34,13 +35,13 @@
 
 .maps__title {
   margin-right: 15px;
-  font-size: 2rem; /* Ajustando o tamanho da fonte para dispositivos móveis */
+  font-size: 2rem;
   font-weight: 400;
 }
 
 .maps__subtitle {
   display: flex;
-  text-align: center;
+  text-align: justify;
 }
 
 @media screen and (min-width: 500px) {
@@ -54,5 +55,8 @@
   .maps {
     width: 966px;
     height: 544px;
+  }
+  .maps__info {
+    width: 50%;
   }
 }
