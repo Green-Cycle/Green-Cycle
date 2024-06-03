@@ -8,6 +8,7 @@
 }
 
 .nav__link {
+  font-size: 14px;
   font-weight: 400;
   transition: 300ms ease-out;
   text-decoration: none;

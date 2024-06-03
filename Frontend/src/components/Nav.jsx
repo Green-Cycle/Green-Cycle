@@ -5,12 +5,14 @@ function Nav({ menuOpen, setMenuOpen }) {
   const navigate = useNavigate();
 
   const handleLinkClick = (path) => {
-    setMenuOpen(false); // Fecha o menu
-    navigate(path); // Navega para a nova rota
+    setMenuOpen(false);
+
+    navigate(path);
   };
 
   const handleScrollToFooter = () => {
-    setMenuOpen(false); // Fecha o menu
+    setMenuOpen(false);
+
     setTimeout(() => {
       const footer = document.getElementById('footer');
       if (footer) {
