@@ -57,7 +57,7 @@ function Header() {
   };
 
   const toggleCart = () => {
-    console.log(calculateTotalItems(cartItems))
+    console.log(calculateTotalItems(cartItems));
     setIsCartOpen((prevState) => !prevState);
   };
 
@@ -91,13 +91,17 @@ function Header() {
           {!isLoginPage && !isRegisterPage && isLoggedIn && (
             <>
               {' '}
-              <button onClick={toggleCart} style={{position: 'relative'}}>
+              <button onClick={toggleCart} style={{ position: 'relative' }}>
                 <img
                   src='/assets/shopping_bag.svg'
                   alt='account icon'
                   className='account-icon'
                 />
-                {calculateTotalItems(cartItems) !==0 && <div className='header__cart-quantity'><p>{calculateTotalItems(cartItems)}</p></div>}
+                {calculateTotalItems(cartItems) !== 0 && (
+                  <div className='header__cart-quantity'>
+                    <p>{calculateTotalItems(cartItems)}</p>
+                  </div>
+                )}
               </button>
               <button
                 className='header__user-button'
@@ -162,8 +166,8 @@ function Header() {
       </div>
       <Nav />
       <div className={menuOpen ? 'header__menu_open' : 'header__menu'}>
-        <Search menuOpen={menuOpen} />
-        <Nav menuOpen={menuOpen} />
+        <Search menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <Nav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </div>{' '}
       {isCartOpen && (
         <Cart

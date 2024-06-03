@@ -2,7 +2,7 @@ import './Search.css';
 import { useState } from 'react';
 import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 
-function Search({ menuOpen }) {
+function Search({ menuOpen, setMenuOpen }) {
   const [searchParams, setSearchParams] = useSearchParams({ q: '' });
   const navigate = useNavigate();
   const [searchFile, setSearchFile] = useState('');
@@ -17,6 +17,7 @@ function Search({ menuOpen }) {
     setSearchParams('q', searchFile);
     navigate(`/store?q=${searchFile}`);
     setSearchFile('');
+    setMenuOpen(false);
   };
   return (
     <div className={menuOpen ? 'header__hamburger' : 'search-container'}>
