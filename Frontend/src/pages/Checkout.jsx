@@ -57,7 +57,7 @@ function Checkout() {
       {' '}
       <div className='checkout__wrapper'>
         <div className='checkout__adress'>
-          <h2 className='checkout__title'>ENDEREÇO</h2>
+          <h2 className='checkout__title'>ENDEREÇO DE ENTREGA</h2>
           <form className='checkout__form'>
             <div className='checkout__input-wrapper'>
               <input
@@ -228,7 +228,7 @@ function Checkout() {
                 <span>{item.name}</span>
                 <span>{item.quantity} un</span>
               </div>
-              R${parseFloat(item.price).toFixed(2)}
+              R$ {parseFloat(item.price).toFixed(2)}
             </li>
           ))}
         </ul>
@@ -239,16 +239,16 @@ function Checkout() {
           </div>
           <div className='checkout__total-items'>
             <h3 className='checkout__subtitle'>Subtotal: </h3>{' '}
-            <span>R${calculateSubtotal()}</span>
+            <span>R$ {calculateSubtotal()}</span>
           </div>
 
           <div className='checkout__total-items'>
             {' '}
             <h3 className='checkout__subtitle'>Frete: </h3>
-            <span>R$20,00</span>
+            <span>R$ 20,00</span>
           </div>
           <div className='checkout__total-item'>
-            <h3>Total: </h3> <span>R${calculateTotal()}</span>
+            <h3>Total: </h3> <span>R$ {calculateTotal()}</span>
           </div>
         </div>
         <button

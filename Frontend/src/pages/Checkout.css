@@ -6,8 +6,9 @@
 }
 
 .checkout__title {
-  padding: 1rem 0;
+  padding: 36px 0 16px;
   text-decoration: underline;
+  font-weight: 400;
 }
 
 .checkout__form {
@@ -20,11 +21,17 @@
 }
 .checkout__wrapper {
   width: 100%;
-
   border: 1px solid gray;
   margin: auto;
   border-radius: 8px;
-  padding-block: 1.5rem;
+  padding-bottom: 36px;
+}
+
+.checkout__save {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  gap: 4px;
 }
 
 .checkout__fit {
@@ -69,28 +76,31 @@
 .checkout__image {
   width: 100px;
   height: 100px;
-  border-radius: 1rem;
+  border-radius: 5px;
+  border: 1px solid #454545;
+  margin-right: 1.5rem;
 }
 
 .checkout__items {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  row-gap: 1rem;
+  row-gap: 2rem;
+  padding-top: 36px;
 }
 
 .checkout__item {
   display: flex;
-  justify-content: space-between;
-  column-gap: 0.5rem;
-  align-items: flex-start;
+  align-items: center;
 }
 .checkout__details {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
+  margin-right: auto;
 }
+
 .checkout__total {
   width: 70%;
   padding: 2rem 0;
@@ -128,6 +138,7 @@
     align-items: self-start;
     justify-content: space-around;
     column-gap: 3rem;
+    padding: 5rem 2rem;
   }
   .checkout__wrapper {
     width: 45%;
@@ -146,9 +157,7 @@
     width: 100%;
   }
   .checkout__save {
-    display: flex;
     justify-content: flex-end;
-    padding-right: 1rem;
-    padding-top: 8px;
+    padding-right: 2rem;
   }
 }
