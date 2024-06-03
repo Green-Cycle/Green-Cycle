@@ -13,7 +13,7 @@ No backend, construímos rotas, modelos e controladores para lidar com usuários
 Bem-vindo ao Marketplace de GreenCycle! Abaixo estão algumas instruções para você começar a explorar e utilizar nosso site:
 
 1. **Navegação**: 
-   - Acesse o site em [aqui](https://green-cycle.netlify.app/sobre).
+   - Acesse o site em [aqui](https://green-cycle.netlify.app).
    - Utilize o menu de navegação para explorar as diferentes páginas disponíveis.
 
 2. **Registro/Login**:
