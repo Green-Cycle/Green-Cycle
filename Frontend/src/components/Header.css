@@ -29,6 +29,7 @@
   display: flex;
   align-items: center;
 }
+
 .header__login-box {
   display: flex;
   align-items: center;
@@ -47,12 +48,15 @@
   line-height: 1rem;
   text-decoration: none;
 }
+
 .header__hamburguer {
   display: none;
 }
+
 .header__menu {
   display: none;
 }
+
 .header__line {
   margin: 0 auto;
   width: 100%;
@@ -64,8 +68,36 @@
   .header__hamburguer {
     display: flex;
   }
+
+  .header__hamburger {
+    padding-top: 10px;
+  }
+
   .header__menu_open {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__logo {
+    position: static;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .header__top {
+    flex-direction: column;
+  }
+
+  .header__icons {
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .header__login-box {
+    margin: auto;
   }
 }
