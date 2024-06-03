@@ -1,12 +1,6 @@
 .nav {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-  padding: 0 2%;
-  margin: auto;
-  list-style: none;
+  display: none;
 }
-
 .nav__link {
   font-size: 14px;
   font-weight: 400;
@@ -44,8 +38,13 @@
   width: 100%;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (min-width: 880px) {
   .nav {
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 0 2%;
+    margin: auto;
+    list-style: none;
   }
 }

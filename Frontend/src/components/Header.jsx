@@ -52,6 +52,18 @@ function Header() {
     tokenCheck();
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setMenuOpen(false);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
