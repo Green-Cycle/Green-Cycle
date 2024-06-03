@@ -23,10 +23,11 @@
 
 .featured__card-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
+  justify-content: space-evenly;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  flex-wrap: wrap;
+  overflow: hidden;
   margin-bottom: 2rem;
 }
 
@@ -44,5 +45,13 @@
   .fetureed__store-link {
     justify-content: end;
     max-width: 970px;
+  }
+
+  .featured__card-list {
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 2.5rem;
   }
 }
