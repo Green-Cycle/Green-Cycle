@@ -6,21 +6,21 @@ function Nav({ menuOpen }) {
       <ul className={menuOpen ? 'header__hamburger' : 'nav'}>
         <li className='nav__li'>
           <Link className='nav__link' to={'/store'}>
-            Loja
+            LOJA
           </Link>
         </li>
         <li className='nav__li'>
           <Link className='nav__link' to={'/sobre'}>
-            Sobre nós
+            SOBRE
           </Link>
         </li>
         <li className='nav__li'>
           <Link className='nav__link' to={'/maps'}>
-            Pontos de coleta
+            PONTOS DE COLETA
           </Link>
         </li>
         <li className='nav__li'>
-          <a className='nav__link'>Contato</a>
+          <a className='nav__link'>CONTATO</a>
         </li>
       </ul>
     </nav>
