@@ -5,8 +5,6 @@
 .search__form {
   display: flex;
   transition: 250ms ease-out;
-  position: relative;
-  left: 10px;
 }
 
 .search-icon {
@@ -14,7 +12,7 @@
   height: 30px;
 }
 
-@media screen and (min-width: 880px) {
+@media screen and (min-width: 881px) {
   .search-container {
     display: flex;
     align-items: center;
@@ -24,7 +22,7 @@
     display: flex;
     transition: 250ms ease-out;
     position: absolute;
-    margin-left: 60px;
+    margin-left: 24px;
     bottom: 1;
     left: 0;
   }
