@@ -28,6 +28,7 @@
 .header__icons {
   display: flex;
   align-items: center;
+  gap: 40px
 }
 
 .header__corner-menu{
@@ -80,6 +81,41 @@
   width: 100%;
   height: 1px;
   background: #545454;
+}
+
+.header__user-wrapper{
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem;
+  gap: 2rem;
+}
+
+.header__close-button{
+  color: black;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;;
+}
+
+.header__logout-button{
+  background-color:black;
+  width: 150px;
+  height: 40px;
+  border-radius: 12px;
+  margin-inline: auto;
+  transition: 250ms ease-in-out;
+}
+
+.header__logout-button:hover{
+  background-color: #5F6368;
+  color: white
 }
 
 @media screen and (max-width: 880px) {

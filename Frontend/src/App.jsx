@@ -13,6 +13,7 @@ import Checkout from './pages/Checkout';
 import Product from './pages/Product';
 import { AuthProvider } from './contexts/AuthContext';
 
+
 function App() {
   return (
     <>
