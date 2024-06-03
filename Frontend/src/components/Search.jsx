@@ -28,6 +28,7 @@ function Search({ menuOpen, setMenuOpen }) {
           value={searchFile}
           onChange={(e) => setSearchFile(e.target.value)}
           placeholder='O que deseja buscar?'
+          maxLength={20}
         />
         <button type='submit' className='header__search'>
           <img
