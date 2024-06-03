@@ -1,7 +1,7 @@
 import './Footer.css';
 function Footer() {
   return (
-    <footer className='footer'>
+    <footer className='footer' id='footer'>
       <div className='footer__columns'>
         {' '}
         <div className='footer__column'>

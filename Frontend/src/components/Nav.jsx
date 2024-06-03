@@ -1,6 +1,10 @@
 import './Nav.css';
 import { Link } from 'react-router-dom';
 function Nav({ menuOpen }) {
+  const handleClick = () => {
+    const footer = document.getElementById('footer');
+    footer.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <nav>
       <ul className={menuOpen ? 'header__hamburger' : 'nav'}>
@@ -20,7 +24,9 @@ function Nav({ menuOpen }) {
           </Link>
         </li>
         <li className='nav__li'>
-          <a className='nav__link'>CONTATO</a>
+          <a onClick={handleClick} className='nav__link'>
+            CONTATO
+          </a>
         </li>
       </ul>
     </nav>
