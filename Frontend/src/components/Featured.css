@@ -1,5 +1,5 @@
 @keyframes cardsIn {
-  from{
+  from {
     opacity: 0;
     transform: translateY(10px);
   }
@@ -7,12 +7,11 @@
     transform: translateY(0px);
     opacity: 1;
   }
-  
 }
 
 .featured {
   padding: 1rem;
-  background-color: #d3d2cd;
+  background-color: #dfddd2;
 }
 
 .featured__title {
@@ -31,31 +30,19 @@
   margin-bottom: 2rem;
 }
 
-
-.featured__icon {
-  width: 25px;
-  height: 25px;
+.fetureed__store-link {
+  text-decoration: none;
+  color: #454545;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin: auto;
 }
 
-
-
 @media screen and (min-width: 880px) {
-  .featured {
-    padding: 3rem;
-  }
-
-  .featured__title {
-    font-size: 2rem;
-    margin-bottom: 4rem;
-  }
-
-  .featured__card-list {
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 2rem;
-    max-width: 1000px;
-    margin: auto;
-    margin-bottom: 4rem;
-    flex-wrap: wrap;
+  .fetureed__store-link {
+    justify-content: end;
+    max-width: 970px;
   }
 }
