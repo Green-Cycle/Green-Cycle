@@ -10,12 +10,14 @@ import {
 
 import { useCart } from '../contexts/CartContext';
 import ProductCard from '../components/ProductCard';
+import Loading from '../components/Loading';
 
 function Store() {
   const { addItemToCart } = useCart();
   const [allProducts, setAllProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedCompany, setSelectedCompany] = useState('');
+  const [isLoading, setIsLoading] = useState(true)
 
   const categories = [
     'Acessórios',
@@ -31,6 +33,8 @@ function Store() {
   const query = searchParams.get('q');
 
   useEffect(() => {
+    // Set Loading State
+    setIsLoading(true)
     // Define fetchData as an async function
     async function fetchData() {
       try {
@@ -46,7 +50,7 @@ function Store() {
       } catch (error) {
         // Handle any errors (e.g., show an error message)
         console.error('Error fetching data:', error);
-      }
+      } finally {setIsLoading(false)}
     }
 
     // Call fetchData immediately
@@ -121,6 +125,7 @@ function Store() {
             </div>
           </div>
           <div className='lojamain__card-list'>
+              {isLoading &&  <Loading />}
             {allProducts.map((item) => (
               <ProductCard
                 item={item}
