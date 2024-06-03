@@ -1,20 +1,19 @@
 @keyframes addButtonAnimation {
-  from{
+  from {
     transform: rotate(0);
   }
-  to{
+  to {
     transform: rotate(180deg);
   }
 }
 
 .featured__card {
+  width: 290px;
+  height: 360px;
   cursor: pointer;
-  width: 90%;
-  max-width: 300px;
   aspect-ratio: 0.7; /* Mantém a proporção de 282x400 */
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -38,7 +37,7 @@
   overflow: hidden;
 }
 
-.featured__description-wrapper{
+.featured__description-wrapper {
   width: 100%;
   padding-left: 1rem;
   padding-top: 0.5rem;
@@ -52,20 +51,10 @@
   overflow: hidden;
 }
 
-.featured__price{
+.featured__price {
   text-align: left;
   font-size: 14px;
 }
-
-.featured__card {
-  width: 282px;
-  height: 400px;
-}
-
-.featured__card > img {
-  height: 80%;
-}
-
 
 .featured__button {
   height: 100%;
@@ -89,16 +78,6 @@
     margin-bottom: 4rem;
   }
 
-  .featured__card-list {
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 2rem;
-    max-width: 1000px;
-    margin: auto;
-    margin-bottom: 4rem;
-    flex-wrap: wrap;
-  }
-
   .featured__button {
     margin-bottom: 10%;
     font-size: 2rem;
@@ -106,7 +85,7 @@
     opacity: 0.5;
   }
 
-  .featured__button:hover{
+  .featured__button:hover {
     animation: addButtonAnimation 500ms both;
     opacity: 1;
   }

@@ -1,4 +1,4 @@
-import { useState , useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 import Cart from './Cart';
@@ -14,7 +14,7 @@ import { checkToken } from '../utils/auth';
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [userWindow, setUserWindow] = useState(false)
+  const [userWindow, setUserWindow] = useState(false);
 
   const location = useLocation();
   const isLoginPage = location.pathname === '/login';
@@ -31,25 +31,27 @@ function Header() {
     addItemToCart,
   } = useCart();
 
-  const [token, setToken] = useState(localStorage.getItem('token'))
+  const [token, setToken] = useState(localStorage.getItem('token'));
 
   // CHECK IF THERE'S A TOKEN
   async function tokenCheck() {
-    token ? handleLogin() : console.log('no token')
+    token ? handleLogin() : console.log('no token');
   }
 
   // Handle successful login
   const handleLogin = async () => {
     try {
-      const data = await checkToken(token)
-      console.log(data)
-      login(data)
-    } catch (err) {console.log(err)}
-  }
+      const data = await checkToken(token);
+      console.log(data);
+      login(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  useEffect(() =>{
+  useEffect(() => {
     tokenCheck();
-  },[])
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -60,11 +62,11 @@ function Header() {
   };
 
   const onLogout = () => {
-    localStorage.removeItem('token')
-    setUserWindow(false)
+    localStorage.removeItem('token');
+    setUserWindow(false);
     logout();
-    navigate('/')
-  }
+    navigate('/');
+  };
 
   return (
     <div className='header'>
@@ -87,18 +89,33 @@ function Header() {
                   className='account-icon'
                 />
               </button>
-              <button onClick={()=> {setUserWindow(true)}}>
+              <button
+                onClick={() => {
+                  setUserWindow(true);
+                }}
+              >
                 <img
                   src='/assets/accountIcon.svg'
                   alt='account icon'
                   className='account-icon'
                 />
               </button>
-              {userWindow && <div className='header__user-wrapper'>
-                <button className='header__close-button' onClick={() => {setUserWindow(false)}}>X</button>
-                <span className='header__username'>Olá, {user?.name}</span>
-                <button className='header__logout-button' onClick={onLogout}>LOGOUT</button>
-              </div>}
+              {userWindow && (
+                <div className='header__user-wrapper'>
+                  <button
+                    className='header__close-button'
+                    onClick={() => {
+                      setUserWindow(false);
+                    }}
+                  >
+                    X
+                  </button>
+                  <span className='header__username'>Olá, {user?.name}</span>
+                  <button className='header__logout-button' onClick={onLogout}>
+                    LOGOUT
+                  </button>
+                </div>
+              )}
             </>
           )}
           {!isLoggedIn && !isLoginPage && !isRegisterPage && (
@@ -115,7 +132,10 @@ function Header() {
                   LOGIN
                 </Link>
                 <p className='header__signup-link'>
-                  ou <Link to={'/register'} className='header__signup-link'>crie sua conta</Link>
+                  ou{' '}
+                  <Link to={'/register'} className='header__signup-link'>
+                    crie sua conta
+                  </Link>
                 </p>
               </div>
             </div>

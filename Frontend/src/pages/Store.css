@@ -1,11 +1,10 @@
 .lojamain {
   padding: 3rem 1rem;
-  background-color: #d3d2cd;
+  background-color: #dfddd2;
 }
 
 .lojamain__container {
   margin: auto;
-  padding: 0 1rem;
 }
 
 .lojamain__title {
@@ -16,21 +15,21 @@
 
 .lojamain__card-list {
   display: flex;
-  justify-content: space-around;
-  column-gap: 1rem;
+  justify-content: space-evenly;
+  column-gap: 2rem;
   row-gap: 2rem;
   flex-wrap: wrap;
   overflow: hidden;
   margin-bottom: 2rem;
 }
 
-.lojamain__button{
+.lojamain__button {
   text-align: left;
   margin-top: 0.5rem;
-  color:#36454f;
+  color: #36454f;
 }
 
-.lojamain__button:focus{
+.lojamain__button:focus {
   font-size: 1rem;
   font-weight: bold;
   text-decoration: underline;
@@ -55,25 +54,29 @@
 @media screen and (min-width: 880px) {
   .lojamain {
     align-items: center;
+    padding: 4rem 2rem;
   }
+
   .lojamain__title {
-    margin-bottom: 15px;
+    padding-bottom: 3rem;
     font-size: 2rem;
   }
+
   .lojamain__container {
-    width: 80%;
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    justify-content: space-around;
+    display: flex;
+    justify-content: Center;
   }
+
   .lojamain__categories {
     flex-direction: column;
-
-    padding-bottom: 20px;
+    padding-right: 40px;
   }
+
   .lojamain__order {
     flex-direction: column;
+    padding-bottom: 40px;
   }
+
   .lojamain span {
     margin-bottom: 0;
     font-size: 1.1rem;
@@ -83,22 +86,18 @@
 
   .lojamain__card-list {
     max-width: 1000px;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 
-  .lojamain__button{
+  .lojamain__button {
     text-align: left;
     margin-top: 0.5rem;
-    color:#36454f;
+    color: #36454f;
   }
 
-  .lojamain__button:focus{
+  .lojamain__button:focus {
     font-size: 1rem;
     font-weight: bold;
     text-decoration: underline;
-  }
-  
-  .lojamain__store-list{
-    margin-top: 2rem;
   }
 }

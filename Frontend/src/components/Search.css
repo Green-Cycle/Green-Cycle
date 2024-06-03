@@ -1,15 +1,10 @@
 .search-container {
-  display: flex;
-  align-items: center;
+  display: none;
 }
 
 .search__form {
   display: flex;
   transition: 250ms ease-out;
-  position: absolute;
-  margin-left: 60px;
-  bottom: 1;
-  left: 0;
 }
 
 .search-icon {
@@ -17,8 +12,18 @@
   height: 30px;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (min-width: 881px) {
   .search-container {
-    display: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .search__form {
+    display: flex;
+    transition: 250ms ease-out;
+    position: absolute;
+    margin-left: 24px;
+    bottom: 1;
+    left: 0;
   }
 }
