@@ -1,15 +1,24 @@
 import './Nav.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Nav({ menuOpen, setMenuOpen }) {
+  const navigate = useNavigate();
+
+  const handleLinkClick = (path) => {
+    setMenuOpen(false); // Fecha o menu
+    navigate(path); // Navega para a nova rota
+  };
+
   const handleScrollToFooter = () => {
-    () => setMenuOpen(false);
-    const footer = document.getElementById('footer');
-    if (footer) {
-      footer.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      console.error('Footer not found');
-    }
+    setMenuOpen(false); // Fecha o menu
+    setTimeout(() => {
+      const footer = document.getElementById('footer');
+      if (footer) {
+        footer.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.error('Footer not found');
+      }
+    }, 0);
   };
 
   return (
@@ -19,7 +28,10 @@ function Nav({ menuOpen, setMenuOpen }) {
           <Link
             className='nav__link'
             to='/store'
-            onClick={() => setMenuOpen(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick('/store');
+            }}
           >
             LOJA
           </Link>
@@ -28,7 +40,10 @@ function Nav({ menuOpen, setMenuOpen }) {
           <Link
             className='nav__link'
             to='/sobre'
-            onClick={() => setMenuOpen(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick('/sobre');
+            }}
           >
             SOBRE
           </Link>
@@ -37,7 +52,10 @@ function Nav({ menuOpen, setMenuOpen }) {
           <Link
             className='nav__link'
             to='/maps'
-            onClick={() => setMenuOpen(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              handleLinkClick('/maps');
+            }}
           >
             PONTOS DE COLETA
           </Link>

@@ -164,7 +164,7 @@ function Header() {
           </button>
         </div>
       </div>
-      <Nav />
+      <Nav setMenuOpen={setMenuOpen} />
       <div className={menuOpen ? 'header__menu_open' : 'header__menu'}>
         <Search menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Nav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
