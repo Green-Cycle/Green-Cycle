@@ -42,7 +42,6 @@ function Header() {
   const handleLogin = async () => {
     try {
       const data = await checkToken(token);
-      console.log(data);
       login(data);
     } catch (err) {
       console.log(err);
@@ -58,6 +57,7 @@ function Header() {
   };
 
   const toggleCart = () => {
+    console.log(calculateTotalItems(cartItems))
     setIsCartOpen((prevState) => !prevState);
   };
 
@@ -67,6 +67,15 @@ function Header() {
     logout();
     navigate('/');
   };
+
+  // CALCULATE TOTAL ITEMS IN CART
+  function calculateTotalItems(cartItems) {
+    let totalItems = 0;
+    for (const item of cartItems) {
+      totalItems += item.quantity;
+    }
+    return totalItems;
+  }
 
   return (
     <div className='header'>
@@ -82,12 +91,13 @@ function Header() {
           {!isLoginPage && !isRegisterPage && isLoggedIn && (
             <>
               {' '}
-              <button onClick={toggleCart}>
+              <button onClick={toggleCart} style={{position: 'relative'}}>
                 <img
                   src='/assets/shopping_bag.svg'
                   alt='account icon'
                   className='account-icon'
                 />
+                {calculateTotalItems(cartItems) !==0 && <div className='header__cart-quantity'><p>{calculateTotalItems(cartItems)}</p></div>}
               </button>
               <button
                 className='header__user-button'
