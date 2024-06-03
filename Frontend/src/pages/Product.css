@@ -1,0 +1,75 @@
+.product{
+  margin-top: 4rem;
+  display: flex;
+  margin-inline:2rem;
+  gap: 2rem;
+  height: 100vh;
+  align-items: top;
+  display: flex;
+  justify-content: center;
+}
+
+.product__image{
+  max-width: 500px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.product__image>img{
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+
+.product__details{
+ max-width:500px;
+}
+
+.product__title{
+  margin-top: 2rem;
+  text-align: left;
+  font-weight: 400;
+}
+
+.product__price{
+  text-align: left;
+}
+
+.product__description{
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.product__buttons{
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
+}
+.product__button{
+  width: 200px;
+  height: 50px;
+  border: 1px solid #445A46;
+  color: #445A46;
+  border-radius: 12px;
+  font-family: 'Reddit Mono', monospace;
+  font-weight: 500;
+  transition: 250ms ease-in-out
+}
+
+.product__button:hover{
+  background-color: black;
+  color: white;
+}
+
+.product__button-add{
+  background-color: #445A46;
+  color: white;
+  border: none;
+}
+
+.product__button-add:hover{
+  background-color: white;
+  color: black;
+}

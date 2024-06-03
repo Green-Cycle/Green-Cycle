@@ -1,0 +1,122 @@
+@keyframes addButtonAnimation {
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(180deg);
+  }
+}
+
+.featured__card {
+  cursor: pointer;
+  width: 90%;
+  max-width: 300px;
+  aspect-ratio: 0.7; /* Mantém a proporção de 282x400 */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  animation: cardsIn 1s;
+}
+
+.featured__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.featured__card > img:hover {
+  transform: scale(1.05);
+}
+
+.featured__card > img {
+  width: 100%;
+  flex-grow: 1;
+  object-fit: cover;
+  transition: transform 200ms ease-in-out;
+  overflow: hidden;
+}
+
+.featured__description-wrapper{
+  width: 100%;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+}
+
+.featured__text {
+  font-size: 0.9rem;
+  text-align: left;
+  /* text-overflow: ellipsis; */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.featured__price{
+  text-align: left;
+  font-size: 14px;
+}
+
+.featured__card {
+  width: 282px;
+  height: 400px;
+}
+
+.featured__card > img {
+  height: 80%;
+}
+
+
+.featured__button {
+  height: 100%;
+  padding-inline: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.featured__icon {
+  width: 25px;
+  height: 25px;
+}
+
+@media screen and (min-width: 880px) {
+  .featured {
+    padding: 3rem;
+  }
+
+  .featured__title {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .featured__card-list {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .featured__button {
+    margin-bottom: 10%;
+    font-size: 2rem;
+    color: #5a5a5a;
+    opacity: 0.5;
+  }
+
+  .featured__button:hover{
+    animation: addButtonAnimation 500ms both;
+    opacity: 1;
+  }
+
+  .featured__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .featured__text {
+    max-width: 200px;
+  }
+}
