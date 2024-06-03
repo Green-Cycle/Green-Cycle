@@ -10,14 +10,14 @@ No backend, construímos rotas, modelos e controladores para lidar com usuários
 
 # Como usar o site
 
-Bem-vindo ao Marketplace de Produtos Reciclados! Abaixo estão algumas instruções para você começar a explorar e utilizar nosso site:
+Bem-vindo ao Marketplace de GreenCycle! Abaixo estão algumas instruções para você começar a explorar e utilizar nosso site:
 
 1. **Navegação**: 
    - Acesse o site em [aqui](https://green-cycle.netlify.app/sobre).
    - Utilize o menu de navegação para explorar as diferentes páginas disponíveis.
 
 2. **Registro/Login**:
-   - Se é a sua primeira vez aqui, clique em "Registrar" para criar uma conta.
+   - Se é a sua primeira vez aqui, clique em "Crie sua conta" para criar uma conta.
    - Se você já é um membro, basta clicar em "Login" para acessar sua conta.
 
 3. **Busca e Compra**:
