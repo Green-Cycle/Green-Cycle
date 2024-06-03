@@ -163,7 +163,7 @@ function Register() {
 
           <span className='register__login '>
             Já é um membro?
-            <Link to='/login' className='auth__link'>
+            <Link to='/login' className='register__link'>
               Faça o login aqui!!
             </Link>
           </span>
