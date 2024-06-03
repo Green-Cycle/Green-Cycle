@@ -58,11 +58,10 @@ function Login() {
     setEmailError({ error: false, message: '' });
 
     const loginData = { email, password };
-    console.log(loginData);
+
     const result = await login(loginData);
 
     if (result && typeof result === 'string') {
-      console.log('Resultado do login:', result);
       localStorage.setItem('token', result);
       const userData = await getUserData(result);
       if (userData) {
@@ -73,7 +72,6 @@ function Login() {
         setMessage('Failed to fetch user data');
       }
     } else {
-      console.log('Falha no login. Resultado:', result);
       setMessage(
         'Falha ao fazer login. Verifique suas credenciais e tente novamente.'
       );
@@ -104,7 +102,7 @@ function Login() {
               className='login__input'
               name='password'
               type='password'
-              placeholder='password'
+              placeholder='Senha'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required

@@ -62,7 +62,6 @@ const searchProducts = async (query) => {
       return response.json();
     })
     .then((res) => {
-      console.log(res);
       return res;
     })
     .catch((res) =>
@@ -96,7 +95,6 @@ const getUserData = async (token) => {
 };
 
 const getProductById = async (id) => {
-
   const response = await fetch(`${BASE_URL}/products/product/${id}`, {
     method: 'GET',
     cache: 'no-cache',

@@ -1,8 +1,9 @@
 import './Register.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { register } from '../utils/auth';
 function Register() {
+  const navigate = useNavigate();
   const [regData, setRegData] = useState({
     name: '',
     email: '',
@@ -63,6 +64,7 @@ function Register() {
     try {
       const data = await register(regData);
       setMessage(data.msg);
+      navigate('/login');
       return;
     } catch (error) {
       setMessage(error.message);
@@ -161,7 +163,7 @@ function Register() {
 
           <span className='register__login '>
             Já é um membro?
-            <Link to='/login' className='auth__link'>
+            <Link to='/login' className='register__link'>
               Faça o login aqui!!
             </Link>
           </span>

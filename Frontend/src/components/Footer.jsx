@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 function Footer() {
   return (
-    <footer className='footer'>
+    <footer className='footer' id='footer'>
       <div className='footer__columns'>
         {' '}
         <div className='footer__column'>
@@ -10,7 +11,9 @@ function Footer() {
             alt='icone de folha'
             className='footer__icon'
           />
-          <p>Sobre</p>
+          <Link to={'/sobre'} className='footer__link'>
+            Sobre
+          </Link>
         </div>
       </div>
 

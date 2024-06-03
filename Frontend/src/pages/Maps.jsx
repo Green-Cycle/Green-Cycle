@@ -77,7 +77,7 @@ function Maps() {
           </p>
         </div>
         <p className='maps__subtitle'>
-          Encontre um ponto de coleta perto de você:
+          ENCONTRE UM PONTO DE COLETA PERTO DE VOCÊ:
         </p>
       </div>
       <div className='maps'>

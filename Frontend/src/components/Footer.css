@@ -14,9 +14,16 @@
   row-gap: 10px;
 }
 
+.footer__link {
+  color: white;
+  text-decoration: none;
+  padding-left: 0.5rem;
+}
+
 .footer__column {
   display: flex;
   column-gap: 5px;
+  align-items: center;
 }
 
 .footer__column-social {
