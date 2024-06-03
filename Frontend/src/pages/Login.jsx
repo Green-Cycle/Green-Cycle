@@ -64,9 +64,9 @@ function Login() {
     if (result && typeof result === 'string') {
       console.log('Resultado do login:', result);
       localStorage.setItem('token', result);
-      const userData = await getUserData(result); // Obtem os dados do usuário
+      const userData = await getUserData(result);
       if (userData) {
-        authLogin(userData); // Passa os dados do usuário para o contexto
+        authLogin(userData);
         setMessage('Login successful!');
         navigate('/store');
       } else {

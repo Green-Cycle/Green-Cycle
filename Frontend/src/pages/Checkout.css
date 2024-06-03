@@ -48,6 +48,10 @@
   width: 80%;
   transition: 250ms ease-out;
   color: white;
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
 }
 
 .checkout__button:hover {
@@ -140,5 +144,11 @@
   }
   .checkout__items {
     width: 100%;
+  }
+  .checkout__save {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    padding-top: 8px;
   }
 }

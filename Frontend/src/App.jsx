@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Checkout from './pages/Checkout';
 import { AuthProvider } from './contexts/AuthContext';
+import Sobre from './pages/Sobre';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/checkout' element={<Checkout />} />
+            <Route path='/sobre' element={<Sobre />} />
           </Routes>
           <Footer />
         </CartProvider>
